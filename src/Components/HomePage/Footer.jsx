@@ -70,7 +70,7 @@ const Footer = () => {
 
         <div className=" h-[53px] w-[100%] bg-[#e7e3f8] flex ">
             <div className="container flex mx-auto justify-evenly items-center gap-36">
-                <p className='font-Lato font-semibold text-[16px] text-[#9DA0AE]'>©Fahad Bin Siddique - All Rights Reserved</p>
+                <p className='font-Lato font-semibold text-[16px] text-[#9DA0AE]'>© Fahad Bin Siddique - All Rights Reserved</p>
                 <div className="flex gap-5">
                 <Link to={'/pages'}> <FaFacebook /> </Link>
                 <Link to={'/pages'}> <LuInstagram /> </Link>

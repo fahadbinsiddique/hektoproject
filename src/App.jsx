@@ -12,7 +12,7 @@ import Products from './PAGES/Products'
 import Blog from './PAGES/Blog'
 import Shop from './PAGES/Shop'
 import Contact from './PAGES/Contact'
-import Layout from './Components/Layout';
+import Layout from './Components/Others/Layout';
 
 function App() {
   const domain = createBrowserRouter(createRoutesFromElements(

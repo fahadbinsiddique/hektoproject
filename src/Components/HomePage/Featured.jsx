@@ -1,11 +1,7 @@
 import React, { useContext } from "react";
-import chair from "../../assets/img/image 1168.png";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { BsZoomIn } from "react-icons/bs";
-import chair2 from '../../assets/img/image 1.png'
-import chair3 from '../../assets/img/image 1169 (1).png'
-import chair4 from '../../assets/img/image 3.png'
 import Slider from "react-slick";
 import { ApiDataContext } from "../ContextApi";
 
