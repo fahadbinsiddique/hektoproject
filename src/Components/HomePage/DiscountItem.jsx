@@ -2,12 +2,17 @@ import React from "react";
 import { IoEllipse } from "react-icons/io5";
 import { SiTicktick } from "react-icons/si";
 import tortuga from '../../assets/img/tortuga-01-b 1.png'
+import ReUsableOne from "../Others/ReUsableOne";
 
 const DiscountItem = () => {
   return (
     <section>
-      <div className="container mx-auto">
-        <h1 className="font-josef font-bold text-center text-[42px]  pb-5 text-[#151875]">
+      <div className="container mx-auto ">
+
+
+
+
+        {/* <h1 className="font-josef font-bold text-center text-[42px]  pb-5 text-[#151875]">
           Discount Item
         </h1>
         <div className="flex className='font-lato gap-8 justify-center   text-[18px] '">
@@ -16,7 +21,15 @@ const DiscountItem = () => {
           </p>
           <p className="text-[#151875] font-semibold">Plastic Chair</p>
           <p className="text-[#151875] font-semibold">Sofa Colletion</p>
-        </div>
+        </div> */}
+
+
+        <ReUsableOne 
+        heading='Discount Item'
+        catergoryName1='Wood Chair'
+        catergoryName2='Plastic Chair'
+        catergoryName3='Sofa Colletion'
+          />
 
         <div className="flex  justify-center  items-center  h-[597px]">
 
