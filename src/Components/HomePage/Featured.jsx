@@ -43,7 +43,7 @@ const Featured = () => {
                     {item.title}
                   </h3>
                   <p className="text-[#151875] group-hover:text-white font-josef text-[14px] ">
-                    In Stock:{item.stock}
+                    In Stock: {item.stock}
                   </p>
                   <p className="font-Lato text-[14px] group-hover:text-white text-[#151875] ">
                     {item.price}

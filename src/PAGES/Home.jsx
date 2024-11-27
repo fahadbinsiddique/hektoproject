@@ -8,6 +8,10 @@ import ShopexOffer from '../Components/HomePage/ShopexOffer'
 import Banner2 from '../Components/HomePage/Banner2'
 import TreandingProducts from '../Components/HomePage/TreandingProducts'
 import DiscountItem from '../Components/HomePage/DiscountItem'
+import TopCategories from '../Components/HomePage/TopCategories'
+import Banner3 from '../Components/HomePage/Banner3'
+import SponserLogo from '../Components/HomePage/SponserLogo'
+import LatestBlog from '../Components/HomePage/LatestBlog'
 
 const Home = () => {
   return (
@@ -19,6 +23,10 @@ const Home = () => {
       <Banner2/>
       <TreandingProducts/>
       <DiscountItem/>
+      <TopCategories/>
+      <Banner3/>
+      <SponserLogo/>
+      <LatestBlog/>
     </>
   )
 }
