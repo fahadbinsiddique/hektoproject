@@ -3,11 +3,14 @@
 }
 
 .slick-dots li{
-    margin-right: 20px !important;
+    margin-right: 10px !important;
+    margin-bottom: -40px !important;
+    margin-top: 0px !important;
     height: 10px !important; 
     width: 35px !important; 
     border-radius: 5px;
     background-color: #FEBAD7 !important;
+
 }
 .slick-dots li.slick-active{
     background-color: #FB2E86 !important;
@@ -16,6 +19,7 @@
 .slick-dots li button{
     width: 40px !important;
     height: 20px !important;
+    
     
     
 }

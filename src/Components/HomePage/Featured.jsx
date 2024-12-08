@@ -8,7 +8,7 @@ import { ApiDataContext } from "../Others/ContextApi";
 const Featured = () => {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -29,7 +29,7 @@ const Featured = () => {
               <div className="!w-[95%] shadow-md rounded-md group  ">
                 <div className="bg-[#F6F7FB] flex justify-center overflow-hidden relative  h-[350px] pt-[40px] pb-[20px]">
                   <img className="  " src={item.thumbnail} alt="" />
-                  <button className="absolute -bottom-10 bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
+                  <button className="absolute -bottom-10 bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white  group-hover:bottom-2 ">
                     View Details
                   </button>
                   <div className="flex gap-5 absolute duration-700 ease-in-out -left-36 group-hover:left-2">
@@ -45,8 +45,8 @@ const Featured = () => {
                   <p className="text-[#151875] group-hover:text-white font-josef text-[14px] ">
                     In Stock: {item.stock}
                   </p>
-                  <p className="font-Lato text-[14px] group-hover:text-white text-[#151875] ">
-                    {item.price}
+                  <p className="font-Lato font-bold text-[14px] group-hover:text-white text-[#151875] ">
+                    $ {item.price}
                   </p>
                 </div>
               </div>
