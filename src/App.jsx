@@ -13,6 +13,8 @@ import Blog from './PAGES/Blog'
 import Shop from './PAGES/Shop'
 import Contact from './PAGES/Contact'
 import Layout from './Components/Others/Layout';
+import ProductDetails from './PAGES/ProductDetails';
+
 
 function App() {
   const domain = createBrowserRouter(createRoutesFromElements(
@@ -24,6 +26,8 @@ function App() {
       <Route path='/blog' element={<Blog/>}/>
       <Route path='/shop' element={<Shop/>}/>
       <Route path='/contact' element={<Contact/>}/>
+      <Route path='/shop/:id' element={<ProductDetails/>}/>
+      
 
     </Route>
   ))

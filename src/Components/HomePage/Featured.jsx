@@ -29,9 +29,11 @@ const Featured = () => {
               <div className="!w-[95%] shadow-md rounded-md group  ">
                 <div className="bg-[#F6F7FB] flex justify-center overflow-hidden relative  h-[350px] pt-[40px] pb-[20px]">
                   <img className="  " src={item.thumbnail} alt="" />
+                  <Link to={'/shop/details'}></Link>
                   <button className="absolute -bottom-10 bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white  group-hover:bottom-2 ">
                     View Details
                   </button>
+
                   <div className="flex gap-5 absolute duration-700 ease-in-out -left-36 group-hover:left-2">
                     <FiShoppingCart className="text-[#2F1AC4] text-[25px]" />
                     <IoIosHeartEmpty className="text-[#1389FF] text-[25px]" />
