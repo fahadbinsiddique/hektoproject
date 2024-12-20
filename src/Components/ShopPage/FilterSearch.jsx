@@ -6,6 +6,8 @@ import { BsZoomIn } from "react-icons/bs";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import { TiArrowSortedUp } from "react-icons/ti";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../slice/cartSlice";
 
 const FilterSearch = () => {
   const value = useContext(ApiDataContext);
@@ -59,18 +61,18 @@ const FilterSearch = () => {
     setCurrentPage(item);
   };
 
-  
-
   let pageNumbers = [];
-  
 
   for (let i = 1; i <= totalPageNumber; i++) {
     pageNumbers.push(i);
   }
 
+  const dispatch = useDispatch();
 
+  const handleAddToCart = (item) => {
+    dispatch(addToCart({ ...item, qty: 1 }));
+  };
 
-  
   return (
     <>
       <section>
@@ -265,13 +267,18 @@ const FilterSearch = () => {
                       <div className="w-[32%] shadow-md rounded-md group  ">
                         <div className="bg-[#F6F7FB] flex justify-center overflow-hidden relative  h-[350px] pt-[40px] pb-[20px]">
                           <img className="  " src={item.thumbnail} alt="" />
-                          
-                          <Link to={`/shop/${item.id}`}><button className="absolute -bottom-12 left-[140px] bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
-                            View Details
-                          </button>  </Link>
 
-                          <div className="flex gap-5 absolute duration-700 ease-in-out -left-36 group-hover:left-2">
-                            <FiShoppingCart className="text-[#2F1AC4] text-[25px]" />
+                          <Link to={`/shop/${item.id}`}>
+                            <button className="absolute -bottom-12 left-[140px] bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
+                              View Details
+                            </button>{" "}
+                          </Link>
+
+                          <div className="flex gap-5 cursor-pointer absolute duration-700 ease-in-out -left-36 group-hover:left-2">
+                            <FiShoppingCart
+                              onClick={() => handleAddToCart(item)}
+                              className="text-[#2F1AC4] text-[25px]"
+                            />
                             <IoIosHeartEmpty className="text-[#1389FF] text-[25px]" />
                             <BsZoomIn className="text-[#1389FF] text-[25px]" />
                           </div>
@@ -307,7 +314,9 @@ const FilterSearch = () => {
                     <li
                       onClick={() => handlePage(pageNumbersList)}
                       className={` border-[2px] px-5 py-2 ${
-                        pageNumbersList === currentPage ? "bg-[#f72588] text-white" : ""
+                        pageNumbersList === currentPage
+                          ? "bg-[#f72588] text-white"
+                          : ""
                       } `}
                     >
                       {" "}

@@ -1,21 +1,25 @@
 import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { ApiDataContext } from '../Components/Others/ContextApi'
+import PageHeading from '../Components/Others/PageHeading'
 
 const ProductDetails = () => {
 
     let productId = useParams()
-    console.log('1',productId);
+    
     
     let data = useContext(ApiDataContext)
     
     
     let singleProduct= data.filter((item)=> item.id == productId.id)
    
-    console.log(singleProduct);
+    
     
   return (
     <section>
+
+<PageHeading headline='Product Details' p1='Home' p2='. Pages' page='. Product Details' />
+       
         <div className="container mx-auto">
 
             <div className='flex'>
@@ -28,7 +32,7 @@ const ProductDetails = () => {
 
             {singleProduct.map((item)=>(
             <div >
-                <h3>{item.title}</h3>
+                <h3 className='text-[36px] font-josef font-semibold'>{item.title}</h3>
                 <p>$ {item.price}</p>
                 <p>-{item.discountPercentage}%</p>
                 <p>{item.description}</p>

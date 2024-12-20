@@ -14,6 +14,7 @@ import Shop from './PAGES/Shop'
 import Contact from './PAGES/Contact'
 import Layout from './Components/Others/Layout';
 import ProductDetails from './PAGES/ProductDetails';
+import Cart from './Components/Others/Cart';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Route path='/shop' element={<Shop/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/shop/:id' element={<ProductDetails/>}/>
+      <Route path='/cart' element={<Cart/>}/>
       
 
     </Route>

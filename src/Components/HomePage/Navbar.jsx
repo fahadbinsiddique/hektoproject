@@ -54,19 +54,19 @@ const Navbar = () => {
                       <li>Page 4</li>
                     </ul>
                   </li>
-                  <li>
+                  <li className="hover:text-[#f92a87]">
                     <Link to={"/pages"}>Pages</Link>
                   </li>
-                  <li>
+                  <li className="hover:text-[#f92a87]">
                     <Link to={"/products"}>Products</Link>
                   </li>
-                  <li>
+                  <li className="hover:text-[#f92a87]">
                     <Link to={"/blog"}>Blog</Link>
                   </li>
-                  <li>
+                  <li className="hover:text-[#f92a87]">
                     <Link to={"/shop"}>Shop</Link>
                   </li>
-                  <li>
+                  <li className="hover:text-[#f92a87]">
                     <Link to={"/contact"}>Contact</Link>
                   </li>
                 </ul>

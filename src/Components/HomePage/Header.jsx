@@ -4,6 +4,8 @@ import { TbPhoneCall } from "react-icons/tb";
 import { CiUser } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { LuShoppingCart } from "react-icons/lu";
+import { Link } from "react-router-dom";
+
 
 
 const Header = () => {
@@ -45,7 +47,7 @@ const Header = () => {
 
               <li className="flex items-center gap-1 text-[#F1F1F1]">Wishlist <CiHeart /> </li>
               
-              <li className="flex items-center text-[#F1F1F1]"> <LuShoppingCart />
+              <li className="flex items-center text-[#F1F1F1]"><Link to='/cart'><LuShoppingCart /></Link> 
               </li>
             </ul>
             

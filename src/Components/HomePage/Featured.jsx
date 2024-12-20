@@ -4,6 +4,8 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { BsZoomIn } from "react-icons/bs";
 import Slider from "react-slick";
 import { ApiDataContext } from "../Others/ContextApi";
+import { Link } from "react-router-dom";
+
 
 const Featured = () => {
   const settings = {
@@ -29,6 +31,7 @@ const Featured = () => {
               <div className="!w-[95%] shadow-md rounded-md group  ">
                 <div className="bg-[#F6F7FB] flex justify-center overflow-hidden relative  h-[350px] pt-[40px] pb-[20px]">
                   <img className="  " src={item.thumbnail} alt="" />
+                  
                   <Link to={'/shop/details'}></Link>
                   <button className="absolute -bottom-10 bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white  group-hover:bottom-2 ">
                     View Details
