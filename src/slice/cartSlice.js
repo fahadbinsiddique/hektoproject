@@ -10,9 +10,8 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       let findProduct = state.cartItems.findIndex(
-        (item) => item.id == action.payload.id
+        (item) => item.id === action.payload.id
       );
-      
 
       if (findProduct === -1) {
         state.cartItems.push(action.payload);
@@ -20,42 +19,52 @@ export const cartSlice = createSlice({
         state.cartItems[findProduct].qty += 1;
       }
       localStorage.setItem("cart", JSON.stringify(state.cartItems));
+      console.log(findProduct);
+      
     },
 
     increment: (state, action) => {
-        const findProductIndex = state.cartItems.findIndex(
-          (item) => item.id === action.payload
-        );
-  
-        if (findProductIndex !== -1) {
-          state.cartItems[findProductIndex].qty += 1;
-          localStorage.setItem("cart", JSON.stringify(state.cartItems));
+      
+      const findProductIndex = state.cartItems.findIndex(
+        (item) => item.id === action.payload
+      );
+
+      if (findProductIndex !== -1) {
+        state.cartItems[findProductIndex].qty += 1;
+        localStorage.setItem("cart", JSON.stringify(state.cartItems));
+      }
+    },
+
+    decrement: (state, action) => {
+      const findProductIndex = state.cartItems.findIndex(
+        (item) => item.id === action.payload
+      );
+
+      if (findProductIndex !== -1) {
+        if (state.cartItems[findProductIndex].qty > 1) {
+          state.cartItems[findProductIndex].qty -= 1;
+        } else {
+          // state.cartItems.splice(findProductIndex, 1); 
         }
-      },
+        localStorage.setItem("cart", JSON.stringify(state.cartItems));
+      }
+    },
 
+    clearCart: (state) => {
+      state.cartItems = [];
+      localStorage.removeItem("cart");
+    },
 
-      decrement: (state, action) => {
-        const findProductIndex = state.cartItems.findIndex(
-          (item) => item.id === action.payload
-        );
-  
-        if (findProductIndex !== -1) {
-          if (state.cartItems[findProductIndex].qty > 1) {
-            state.cartItems[findProductIndex].qty -= 1;
-          } else {
-            state.cartItems.splice(findProductIndex, 1); // Remove item if qty <= 1
-          }
-          localStorage.setItem("cart", JSON.stringify(state.cartItems));
-        }
-      },
-
-    
+    removeFromCart: (state, action) => {
+      state.cartItems = state.cartItems.filter(
+        (item) => item.id !== action.payload
+      );
+      localStorage.setItem("cart", JSON.stringify(state.cartItems));
+    },
   },
-  
-},
+});
 
-);
-
-export const { addToCart ,decrement, increment} = cartSlice.actions;
+export const { addToCart, decrement, increment, clearCart, removeFromCart } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

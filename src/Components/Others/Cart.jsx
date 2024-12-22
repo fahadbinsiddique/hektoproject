@@ -2,19 +2,22 @@ import React from "react";
 import PageHeading from "./PageHeading";
 import { useDispatch, useSelector } from "react-redux";
 import { FaCircle } from "react-icons/fa";
-import { increment, decrement } from "../../slice/cartSlice";
+import {
+  increment,
+  decrement,
+  clearCart,
+  removeFromCart,
+} from "../../slice/cartSlice";
 import SponserLogo from "../HomePage/SponserLogo";
+import { TiDelete } from "react-icons/ti";
 
 const Cart = () => {
-  const cartData = useSelector((state) => state.cartItemManager.cartItems);
-  console.log(cartData);
-
   const dispatch = useDispatch();
 
+  const cartData = useSelector((state) => state.cartItemManager.cartItems);
+
   const calculateTotal = () =>
-    cartData.reduce((acc, item) => acc + item.qty * item.price, 0);
-  console.log('f',Math.ceil(calculateTotal()),0);
-  
+    cartData.reduce((sum, item) => sum + item.qty * item.price, 0);
 
   return (
     <>
@@ -26,13 +29,14 @@ const Cart = () => {
       />
 
       <div className="container mx-auto ">
-
-
-
         <div className="flex  relative overflow-hidden justify-between ">
-      <h1 className={`text-gray-400 absolute top-[50%] left-[30%] text-center text-[42px] font-josef font-semibold ${Math.ceil(calculateTotal()) === 0 ? '' : 'hidden'}`}>
-  Your cart is empty.
-</h1>
+          <h1
+            className={`text-gray-400 absolute top-[50%] left-[30%] text-center text-[42px] font-josef font-semibold ${
+              Math.ceil(calculateTotal()) === 0 ? "" : "hidden"
+            }`}
+          >
+            Your cart is empty.
+          </h1>
           <div className=" w-[65%] ">
             <div className="flex   pt-24 pb-6 ">
               <h2 className="font-josef  w-[40%]  font-bold text-[20px] text-[#1d3178]">
@@ -51,10 +55,15 @@ const Cart = () => {
 
             {cartData.map((item) => (
               <div>
-                <div className="flex     border-b border-gray-300 ">
+                <div className="flex   py-3  border-b border-gray-300 ">
                   <div className="flex  w-[40%] ">
-                    <div className="flex  my-2 gap-2 ">
-                      <div className="w-[83px] h-[87px] flex items-center border  ">
+                    <div className="flex  my-2 gap-4 ">
+                      <div className="w-[83px]  h-[87px] relative overflow-ellipsis flex items-center  border  ">
+                        <button
+                          onClick={() => dispatch(removeFromCart(item.id))}
+                        >
+                          <TiDelete className="absolute -top-2 left-[88%] text-[20px]" />
+                        </button>
                         <img src={item.thumbnail} alt="" />
                       </div>
 
@@ -83,7 +92,7 @@ const Cart = () => {
                       >
                         -
                       </div>
-                      
+
                       <div>{item.qty}</div>
                       <div
                         class="cursor-pointer bg-[#bebfc2] px-2"
@@ -167,12 +176,13 @@ const Cart = () => {
             Update Curt
           </button>
 
-          <button className="w-[134px]  px-0 text-white h-[39px] bg-[#FB2E86] font-josef font-semibold text-[16px]">
+          <button
+            className="w-[134px]  px-0 text-white h-[39px] bg-[#FB2E86] font-josef font-semibold text-[16px] "
+            onClick={() => dispatch(clearCart())}
+          >
             Clear Curt
           </button>
         </div>
-
-        
       </div>
 
       <SponserLogo />
