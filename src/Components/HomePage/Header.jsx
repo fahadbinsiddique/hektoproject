@@ -47,7 +47,7 @@ const Header = () => {
 
               <li className="flex items-center gap-1 text-[#F1F1F1]">Wishlist <CiHeart /> </li>
               
-              <li className="flex items-center text-[#F1F1F1]"><Link to='/cart'><LuShoppingCart /></Link> 
+              <li className="flex items-center text-[20px] text-[#F1F1F1]"><Link to='/cart'><LuShoppingCart /></Link> 
               </li>
             </ul>
             

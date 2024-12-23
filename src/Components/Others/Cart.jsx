@@ -15,6 +15,10 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const cartData = useSelector((state) => state.cartItemManager.cartItems);
+  let cartItemNumber = cartData.length;
+  
+  
+  
 
   const calculateTotal = () =>
     cartData.reduce((sum, item) => sum + item.qty * item.price, 0);
@@ -27,7 +31,9 @@ const Cart = () => {
         p2=". Pages"
         page=". Cart Details"
       />
-
+        <div>
+          <p>{cartItemNumber}</p>
+        </div>
       <div className="container mx-auto ">
         <div className="flex  relative overflow-hidden justify-between ">
           <h1
@@ -37,6 +43,7 @@ const Cart = () => {
           >
             Your cart is empty.
           </h1>
+
           <div className=" w-[65%] ">
             <div className="flex   pt-24 pb-6 ">
               <h2 className="font-josef  w-[40%]  font-bold text-[20px] text-[#1d3178]">
