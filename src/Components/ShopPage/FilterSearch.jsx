@@ -11,21 +11,38 @@ import { addToCart } from "../../slice/cartSlice";
 
 const FilterSearch = () => {
   const value = useContext(ApiDataContext);
-
+  
+  //category
+  
   let [category, setCategory] = useState([]);
-
+  
   useEffect(() => {
     setCategory([...new Set(value.map((item) => item.category))]);
   }, [value]);
-
-  let [categoryProduct, setCategoryProduct] = useState([]);
-
+  
+  let [cat, setCat] = useState([]);
+  
   const handleCategory = (catName) => {
     let filteredProduct = value.filter((item) => item.category == catName);
-    setCategoryProduct(filteredProduct);
+    setCat(filteredProduct);
   };
-
   let [catShow, setCatShow] = useState(false);
+
+  //brand
+  let [brand, setBrand] = useState([]);
+
+  useEffect(() => {
+    setBrand([...new Set(value.map((item) => item.brand))]);
+  }, [value]);
+
+  const handleBrand = (brandName) => {
+    let filteredBrand = value.filter((item) => item.brand == brandName);
+    setCat(filteredBrand);
+  };
+  let [brandShow, setBrandShow] = useState(false);
+  //===========
+
+
 
   const [catPrice, setCatPrice] = useState(false);
 
@@ -140,12 +157,12 @@ const FilterSearch = () => {
           </div>
 
           <div className="flex gap-5  ">
-            <div className="w-[20%] ">
+            <div className="w-[20%] space-y-3">
               <p
                 onClick={() => setCatShow(!catShow)}
-                className="font-josef  cursor-pointer text-[25px] font-bold flex items-center justify-between"
+                className="font-josef underline underline-offset-[6px] cursor-pointer text-[20px] font-bold flex items-center text-[#151875]  justify-between"
               >
-                Shop by Category
+                Categories
                 {catShow == true ? <TiArrowSortedDown /> : <TiArrowSortedUp />}
               </p>
 
@@ -163,10 +180,35 @@ const FilterSearch = () => {
               )}
 
               <p
-                onClick={() => setCatPrice(!catPrice)}
-                className="font-josef cursor-pointer text-[25px] font-bold flex items-center justify-between"
+                onClick={() => setBrandShow(!brandShow)}
+                className="font-josef underline underline-offset-[6px] cursor-pointer text-[20px] font-bold flex items-center text-[#151875]  justify-between"
               >
-                Shop by Price
+                Brand
+                {brandShow == true ? (
+                  <TiArrowSortedDown />
+                ) : (
+                  <TiArrowSortedUp />
+                )}
+              </p>
+
+              {brandShow && (
+                <ul className=" h-[400px] overflow-x-scroll  bg-gray-50">
+                  {brand.map((item) => (
+                    <li
+                      onClick={() => handleBrand(item)}
+                      className="py-4 hover:bg-gray-200 cursor-pointer border-b-[1px]"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <p
+                onClick={() => setCatPrice(!catPrice)}
+                className="font-josef underline underline-offset-[6px] cursor-pointer text-[20px] font-bold flex items-center  text-[#151875] justify-between"
+              >
+                Price Filter
                 {catPrice == true ? <TiArrowSortedDown /> : <TiArrowSortedUp />}
               </p>
 
@@ -209,8 +251,8 @@ const FilterSearch = () => {
 
             <div className="w-[80%]">
               <div className=" flex items-center flex-wrap gap-5 space-y-4">
-                {categoryProduct.length > 0
-                  ? categoryProduct.map((item) => (
+                {cat.length > 0
+                  ? cat.map((item) => (
                       <div className="w-[32%] shadow-md rounded-md group   ">
                         <div className="bg-[#F6F7FB] flex justify-center overflow-hidden relative  h-[350px] pt-[40px] pb-[20px]">
                           <img className="  " src={item.thumbnail} alt="" />

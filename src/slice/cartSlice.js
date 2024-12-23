@@ -19,7 +19,7 @@ export const cartSlice = createSlice({
         state.cartItems[findProduct].qty += 1;
       }
       localStorage.setItem("cart", JSON.stringify(state.cartItems));
-      console.log(findProduct);
+      
       
     },
 

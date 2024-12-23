@@ -42,7 +42,7 @@ const Navbar = () => {
                   <li className="group relative">
                     <Link
                       to={"/"}
-                      className="flex items-center group-hover:text-[#f92a87] "
+                      className="flex items-center hover:underline underline-offset-4 group-hover:text-[#f92a87] "
                     >
                       Home
                       <FaAngleDown className="text-gray-600 group-hover:text-[#f92a87]" />
@@ -54,19 +54,19 @@ const Navbar = () => {
                       <li>Page 4</li>
                     </ul>
                   </li>
-                  <li className="hover:text-[#f92a87]">
+                  <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
                     <Link to={"/pages"}>Pages</Link>
                   </li>
-                  <li className="hover:text-[#f92a87]">
+                  <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
                     <Link to={"/products"}>Products</Link>
                   </li>
-                  <li className="hover:text-[#f92a87]">
+                  <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
                     <Link to={"/blog"}>Blog</Link>
                   </li>
-                  <li className="hover:text-[#f92a87]">
+                  <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
                     <Link to={"/shop"}>Shop</Link>
                   </li>
-                  <li className="hover:text-[#f92a87]">
+                  <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
                     <Link to={"/contact"}>Contact</Link>
                   </li>
                 </ul>
