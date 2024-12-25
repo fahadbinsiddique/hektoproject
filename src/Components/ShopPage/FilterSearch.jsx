@@ -12,6 +12,8 @@ import { addToCart } from "../../slice/cartSlice";
 const FilterSearch = () => {
   const value = useContext(ApiDataContext);
   
+  
+  
   //category
   
   let [category, setCategory] = useState([]);
