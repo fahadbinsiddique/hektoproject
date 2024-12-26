@@ -173,9 +173,9 @@ const CheckoutPage = () => {
                 </p>
 
                 <div className="flex justify-center py-2">
-                  <Link to={"/checkout"}>
+                  <Link to={"/checkout/order-complete"}>
                     <button className="bg-[#19D16F] text-center  font-lato font-bold text-white rounded-md text-[14px] w-[312px] h-[40px]">
-                      Proceed To Checkout
+                      Confirm Order
                     </button>
                   </Link>
                 </div>

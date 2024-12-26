@@ -261,8 +261,8 @@ const FilterSearch = () => {
                           <button className="absolute -bottom-10 bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
                             View Details
                           </button>
-                          <div className="flex gap-5 absolute duration-700 ease-in-out -left-36 group-hover:left-2">
-                            <FiShoppingCart className="text-[#2F1AC4] text-[25px]" />
+                          <div className="flex gap-5 absolute  duration-700 ease-in-out -left-36 group-hover:left-2">
+                            <FiShoppingCart className="text-[#2F1AC4] text-[25px]  " />
                             <IoIosHeartEmpty className="text-[#1389FF] text-[25px]" />
                             <BsZoomIn className="text-[#1389FF] text-[25px]" />
                           </div>
@@ -318,13 +318,17 @@ const FilterSearch = () => {
                             </button>{" "}
                           </Link>
 
-                          <div className="flex gap-5 cursor-pointer absolute duration-700 ease-in-out -left-36 group-hover:left-2">
-                            <FiShoppingCart
+                          <div className="flex gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
+
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full"><FiShoppingCart
                               onClick={() => handleAddToCart(item)}
-                              className="text-[#2F1AC4] text-[25px]"
-                            />
-                            <IoIosHeartEmpty className="text-[#1389FF] text-[25px]" />
-                            <BsZoomIn className="text-[#1389FF] text-[25px]" />
+                              className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
+                            /></div>
+
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full"><IoIosHeartEmpty className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" /></div>
+
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <BsZoomIn className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" /></div>
                           </div>
                         </div>
                         <div className="bg-[#ffffff] text-center py-8 space-y-3 group-hover:bg-[#2F1AC4] rounded-md">
