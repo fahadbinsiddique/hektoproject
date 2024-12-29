@@ -29,7 +29,7 @@ const Navbar = () => {
           <div className="flex lg:items-center items-center  gap-4 lg:justify-between py-6 ">
             <div className=" lg:flex   justify-between items-end   gap-[160px] ">
 
-              <div className="lg:flex     ">
+              <div className="lg:flex  hover:scale-110   ">
                 
                 <Link to={"/"}>
                   <img src={logo} alt="" />

@@ -16,6 +16,8 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const cartData = useSelector((state) => state.cartItemManager.cartItems);
+  
+  
 
 
 
@@ -32,6 +34,7 @@ const Cart = () => {
       />
       <div></div>
       <div className="container mx-auto ">
+        
         <div className="flex  relative overflow-hidden justify-between ">
           <h1
             className={`text-gray-400 absolute top-[50%] left-[30%] text-center text-[42px] font-josef font-semibold ${

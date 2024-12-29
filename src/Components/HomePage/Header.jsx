@@ -10,6 +10,8 @@ import {  useSelector } from "react-redux";
 const Header = () => {
   
   const cartData = useSelector((state) => state.cartItemManager.cartItems);
+  
+  
   const countNumber=cartData.map((item)=>item.qty)
   const totalCountNumber= countNumber.reduce((currentvalue,total) => currentvalue+total,0)
    
@@ -48,13 +50,13 @@ const Header = () => {
                   <option className="text-gray-500" value="">BDT</option>
                 </select>
               </li>
-              <li className="flex items-center gap-1 text-[#F1F1F1]">Login < CiUser /></li>
+              <Link to={'/signin'}><li className="flex items-center gap-1 text-[#F1F1F1] ">Login < CiUser /></li></Link>
 
               <li className="flex items-center gap-1 text-[#F1F1F1]">Wishlist <CiHeart /> </li>
               
               <li className="flex relative items-center  ">
                 <Link to='/cart'><LuShoppingCart className="text-[20px] text-[#F1F1F1]" /></Link> 
-                <span className="absolute  -top-2 -right-2 h-5 w-5 justify-center items-center bg-pink-500 rounded-full text-white text-center">{ totalCountNumber}</span>
+                <span className={`absolute  -top-2 -right-2 h-5 w-5 justify-center items-center bg-pink-500 rounded-full text-white text-center ${cartData.length ===0? 'hidden':''}`}>{ totalCountNumber}</span>
               </li>
 
             </ul>

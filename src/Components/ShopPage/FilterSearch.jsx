@@ -8,9 +8,14 @@ import { Link } from "react-router-dom";
 import { TiArrowSortedUp } from "react-icons/ti";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../slice/cartSlice";
+import {  useSelector } from "react-redux";
 
 const FilterSearch = () => {
   const value = useContext(ApiDataContext);
+  
+  const cartData = useSelector((state) => state.cartItemManager.cartItems);
+  
+  
   
   
   

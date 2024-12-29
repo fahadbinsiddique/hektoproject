@@ -17,6 +17,8 @@ import ProductDetails from './PAGES/ProductDetails';
 import Cart from './Components/Others/Cart';
 import CheckoutPage from './Components/Others/CheckoutPage';
 import OrderComplete from './Components/Others/OrderComplete';
+import SignIn from './Components/Others/SignIn';
+import SignUp from './Components/Others/SignUp';
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/checkout' element={<CheckoutPage/>}/>
       <Route path='/checkout/order-complete' element={<OrderComplete/>}/>
+      <Route path='/signin' element={<SignIn/>}/>
+      <Route path='/signup' element={<SignUp/>}/>
       
 
     </Route>
