@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext ,Component} from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { BsZoomIn } from "react-icons/bs";
@@ -9,11 +9,12 @@ import { Link } from "react-router-dom";
 
 const Featured = () => {
   const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
     slidesToShow: 4,
-    slidesToScroll: 4,
+    speed: 500
   };
 
   const value = useContext(ApiDataContext);
@@ -26,7 +27,9 @@ const Featured = () => {
         </h2>
 
         <div className="py-8">
+
           <Slider {...settings}>
+
             {value.map((item) => (
               <div className="!w-[95%] shadow-md rounded-md group  ">
                 <div className="bg-[#F6F7FB] flex justify-center overflow-hidden relative  h-[350px] pt-[40px] pb-[20px]">
@@ -56,6 +59,7 @@ const Featured = () => {
                 </div>
               </div>
             ))}
+
           </Slider>
         </div>
       </div>
