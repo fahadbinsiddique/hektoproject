@@ -19,6 +19,7 @@ import CheckoutPage from './Components/Others/CheckoutPage';
 import OrderComplete from './Components/Others/OrderComplete';
 import SignIn from './Components/Others/SignIn';
 import SignUp from './Components/Others/SignUp';
+import ForgetPassword from './Components/Others/ForgetPassword';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       <Route path='/checkout/order-complete' element={<OrderComplete/>}/>
       <Route path='/signin' element={<SignIn/>}/>
       <Route path='/signup' element={<SignUp/>}/>
+      <Route path='/forgetpass' element={<ForgetPassword/>}/>
       
 
     </Route>

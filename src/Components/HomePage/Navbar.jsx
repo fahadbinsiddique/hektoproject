@@ -78,7 +78,7 @@ const Navbar = () => {
               <input
                 placeholder="search your product"
                 type="search"
-                className="border lg:px-8 -px-20   lg:py-2"
+                className="border-2 lg:px-8 -px-20   lg:py-2"
               />
 
               <div className="bg-[#FB2E86] lg:py-[9px] py-[1px]  lg:px-2 ">

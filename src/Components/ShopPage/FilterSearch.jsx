@@ -8,27 +8,23 @@ import { Link } from "react-router-dom";
 import { TiArrowSortedUp } from "react-icons/ti";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../slice/cartSlice";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const FilterSearch = () => {
   const value = useContext(ApiDataContext);
-  
+
   const cartData = useSelector((state) => state.cartItemManager.cartItems);
-  
-  
-  
-  
-  
+
   //category
-  
+
   let [category, setCategory] = useState([]);
-  
+
   useEffect(() => {
     setCategory([...new Set(value.map((item) => item.category))]);
   }, [value]);
-  
+
   let [cat, setCat] = useState([]);
-  
+
   const handleCategory = (catName) => {
     let filteredProduct = value.filter((item) => item.category == catName);
     setCat(filteredProduct);
@@ -48,8 +44,6 @@ const FilterSearch = () => {
   };
   let [brandShow, setBrandShow] = useState(false);
   //===========
-
-
 
   const [catPrice, setCatPrice] = useState(false);
 
@@ -324,16 +318,20 @@ const FilterSearch = () => {
                           </Link>
 
                           <div className="flex gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
-
-                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full"><FiShoppingCart
-                              onClick={() => handleAddToCart(item)}
-                              className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
-                            /></div>
-
-                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full"><IoIosHeartEmpty className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" /></div>
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <FiShoppingCart
+                                onClick={() => handleAddToCart(item)}
+                                className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
+                              />
+                            </div>
 
                             <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
-                              <BsZoomIn className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" /></div>
+                              <IoIosHeartEmpty className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
+                            </div>
+
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <BsZoomIn className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
+                            </div>
                           </div>
                         </div>
                         <div className="bg-[#ffffff] text-center py-8 space-y-3 group-hover:bg-[#2F1AC4] rounded-md">

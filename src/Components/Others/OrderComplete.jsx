@@ -4,6 +4,7 @@ import tick from '../../assets/img/Vectorww 16.png'
 import tick1 from '../../assets/img/Ellipse 70.png'
 import tick3 from '../../assets/img/Vectorfsdfds 15.png'
 import { Link } from "react-router-dom";
+import fff from '../../assets/img/payment_success_icon.png'
 
 const OrderComplete = () => {
   return (
@@ -17,11 +18,11 @@ const OrderComplete = () => {
 
       <div className="container mx-auto ">
         <div className=" py-4 ">
-            {/* <div className=" ">
-                <img className='relative top-[50%] left-[50%] ' src={tick} alt="" />
-                <img className='absolute top-[50%] left-[50%]  ' src={tick1} alt="" />
-                <img  className='absolute top-[0] left-[0]   'src={tick3} alt="" />
-            </div> */}
+            
+            <div className='flex items-center  text-center justify-center'>
+            <img src={fff} alt="" className='w-[300px]' />
+            </div>
+
             <div className='flex flex-col items-center '>
                 <h1 className='text-[36px] font-josef py-6 font-bold text-[#101750]'>Your Order Is Completed! </h1>
                 <p className='font-Lato font-semibold w-[700px] text-center  text-[16px] py-4 text-[#8D92A7]'>Thank you for your order! Your order is being processed and will be completed within 3-6
