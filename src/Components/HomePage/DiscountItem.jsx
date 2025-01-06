@@ -1,7 +1,7 @@
 import React from "react";
 import { IoEllipse } from "react-icons/io5";
 import { SiTicktick } from "react-icons/si";
-import tortuga from '../../assets/img/tortuga-01-b 1.png'
+import tortuga from '../../assets/img/Grosdfsdafup 154.png'
 import ReUsableOne from "../Others/ReUsableOne";
 
 const DiscountItem = () => {

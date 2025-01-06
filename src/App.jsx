@@ -11,7 +11,6 @@ import Pages from './PAGES/Pages'
 import Products from './PAGES/Products'
 import Blog from './PAGES/Blog'
 import Shop from './PAGES/Shop'
-import Contact from './PAGES/Contact'
 import Layout from './Components/Others/Layout';
 import ProductDetails from './PAGES/ProductDetails';
 import Cart from './Components/Others/Cart';
@@ -22,6 +21,8 @@ import SignUp from './Components/Others/SignUp';
 import ForgetPassword from './Components/Others/ForgetPassword';
 import BlogPage_2 from './Components/Blog/BlogPage_2';
 import About from './Components/AboutUs/About';
+import Contact from './Components/ContactUs/Contact';
+import NotFound from './Components/Others/NotFound';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
       <Route path='/checkout/order-complete' element={<OrderComplete/>}/>
       <Route path='/signin' element={<SignIn/>}/>
       <Route path='/signup' element={<SignUp/>}/>
+      <Route path='/404-not-found' element={<NotFound/>}/>
       <Route path='/forgetpass' element={<ForgetPassword/>}/>
       <Route path='/maurisblogpost' element={<BlogPage_2/>}/>
       

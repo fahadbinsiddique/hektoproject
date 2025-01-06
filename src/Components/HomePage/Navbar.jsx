@@ -47,11 +47,13 @@ const Navbar = () => {
                       Home
                       <FaAngleDown className="text-gray-600 group-hover:text-[#f92a87]" />
                     </Link>
-                    <ul className="hidden   top-5 py-6 space-y-4 left-0 absolute group-hover:block   ">
-                      <li>Page 1</li>
-                      <li>Page 2</li>
-                      <li>Page 3</li>
-                      <li>Page 4</li>
+                    <ul className="hidden   top-5 py-6  left-0 absolute group-hover:block ">
+                      <Link to={'/404-not-found'} className=" hover:underline  hover:text-[#f92a87] "><li>Page 1</li></Link>
+                      <Link to={'/404-not-found'} className=" hover:underline  hover:text-[#f92a87] py-2"><li>Page 2</li></Link>
+                      <Link to={'/404-not-found'} className=" hover:underline  hover:text-[#f92a87] py-2"><li>Page 3</li></Link>
+                      <Link to={'/404-not-found'} className=" hover:underline  hover:text-[#f92a87] py-2"><li>Page 4</li></Link>
+                      
+                      
                     </ul>
                   </li>
                   <li className="hover:text-[#f92a87] hover:underline underline-offset-4">

@@ -404,17 +404,19 @@ const BlogPage_2 = () => {
                     </div>
                   </div>
 
-                    <div className="flex items-center gap-3 font-Lato text-[#8A91AB] text-[14px] font-medium">
-                        <input type="checkbox" name="" id="" />
-                        <p>Save my name, email, and website in this browser for the next time I comment.</p>
-                    </div>
+                  <div className="flex items-center gap-3 font-Lato text-[#8A91AB] text-[14px] font-medium">
+                    <input type="checkbox" name="" id="" />
+                    <p>
+                      Save my name, email, and website in this browser for the
+                      next time I comment.
+                    </p>
+                  </div>
 
-                    <div className="py-16">
-                        <button className="w-[698px] bg-[#FB2E86] text-white rounded-sm  h-[50px]">
-                        Continue Shipping
-                        </button>
-                    </div>
-
+                  <div className="py-16">
+                    <button className="w-[698px] bg-[#FB2E86] text-white rounded-sm  h-[50px]">
+                      Continue Shipping
+                    </button>
+                  </div>
                 </div>
               </section>
             </div>
