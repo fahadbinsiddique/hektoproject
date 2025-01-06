@@ -55,7 +55,7 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
-                    <Link to={"/pages"}>Pages</Link>
+                    <Link to={"/about"}>About Us</Link>
                   </li>
                   <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
                     <Link to={"/products"}>Products</Link>

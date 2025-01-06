@@ -20,6 +20,8 @@ import OrderComplete from './Components/Others/OrderComplete';
 import SignIn from './Components/Others/SignIn';
 import SignUp from './Components/Others/SignUp';
 import ForgetPassword from './Components/Others/ForgetPassword';
+import BlogPage_2 from './Components/Blog/BlogPage_2';
+import About from './Components/AboutUs/About';
 
 
 function App() {
@@ -27,7 +29,7 @@ function App() {
     <Route element={<Layout/>}>
 
       <Route path='/' element={<Home/>}/>
-      <Route path='/pages' element={<Pages/>}/>
+      <Route path='/about' element={<About/>}/>
       <Route path='/products' element={<Products/>}/>
       <Route path='/blog' element={<Blog/>}/>
       <Route path='/shop' element={<Shop/>}/>
@@ -39,6 +41,7 @@ function App() {
       <Route path='/signin' element={<SignIn/>}/>
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/forgetpass' element={<ForgetPassword/>}/>
+      <Route path='/maurisblogpost' element={<BlogPage_2/>}/>
       
 
     </Route>
