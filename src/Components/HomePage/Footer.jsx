@@ -13,14 +13,14 @@ const Footer = () => {
           <div className="flex flex-wrap justify-between gap-8">
             {/* First Section */}
             <div className="w-full md:w-[40%] lg:w-[25%]">
-              <img src={Hekto} className="pb-6" alt="Logo" />
-              <div className="flex bg-white py-1 rounded-lg items-center">
+              <img src={Hekto} className="pb-6" alt="Hekto Company Logo" />
+              <div className="flex justify-between bg-white py-1 rounded-lg items-center">
                 <input
                   type="email"
                   placeholder="Enter Email Address"
-                  className="w-full ml-2 p-2 text-sm focus:outline-none"
+                  className=" w-[70%] ml-2 p-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#f92a87] rounded-l-lg"
                 />
-                <button className="font-josef font-medium text-[16px] rounded-lg py-2 px-4 bg-[#f92a87] text-white">
+                <button className="w-[30%] mr-2 p-2 font-josef font-medium text-[16px] rounded-r-lg py-2 px-4 bg-[#f92a87] text-white">
                   Sign Up
                 </button>
               </div>
@@ -38,16 +38,17 @@ const Footer = () => {
                 Categories
               </h2>
               <div className="space-y-4">
-                {["Laptops & Computers", "Cameras & Photography", "Smart Phones & Tablets", "Video Games & Consoles", "Waterproof Headphones"].map(
-                  (item) => (
-                    <p
-                      key={item}
-                      className="font-Lato text-[16px] text-[#8A8FB9]"
-                    >
-                      {item}
-                    </p>
-                  )
-                )}
+                {[
+                  "Laptops & Computers",
+                  "Cameras & Photography",
+                  "Smart Phones & Tablets",
+                  "Video Games & Consoles",
+                  "Waterproof Headphones",
+                ].map((item) => (
+                  <p key={item} className="font-Lato text-[16px] text-[#8A8FB9]">
+                    {item}
+                  </p>
+                ))}
               </div>
             </div>
 
@@ -57,16 +58,17 @@ const Footer = () => {
                 Customer Care
               </h2>
               <div className="space-y-4">
-                {["My Account", "Discount", "Returns", "Orders History", "Order Tracking"].map(
-                  (item) => (
-                    <p
-                      key={item}
-                      className="font-Lato text-[16px] text-[#8A8FB9]"
-                    >
-                      {item}
-                    </p>
-                  )
-                )}
+                {[
+                  "My Account",
+                  "Discount",
+                  "Returns",
+                  "Orders History",
+                  "Order Tracking",
+                ].map((item) => (
+                  <p key={item} className="font-Lato text-[16px] text-[#8A8FB9]">
+                    {item}
+                  </p>
+                ))}
               </div>
             </div>
 
@@ -76,16 +78,18 @@ const Footer = () => {
                 Pages
               </h2>
               <div className="space-y-4">
-                {["Blog", "Browse the Shop", "Category", "Pre-Built Pages", "Visual Composer Elements", "WooCommerce Pages"].map(
-                  (item) => (
-                    <p
-                      key={item}
-                      className="font-Lato text-[16px] text-[#8A8FB9]"
-                    >
-                      {item}
-                    </p>
-                  )
-                )}
+                {[
+                  "Blog",
+                  "Browse the Shop",
+                  "Category",
+                  "Pre-Built Pages",
+                  "Visual Composer Elements",
+                  "WooCommerce Pages",
+                ].map((item) => (
+                  <p key={item} className="font-Lato text-[16px] text-[#8A8FB9]">
+                    {item}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
@@ -94,19 +98,19 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="h-auto w-full bg-[#e7e3f8] flex justify-center items-center py-4">
-        <div className="container mx-auto flex flex-wrap justify-between items-center px-5 gap-4">
+        <div className="container mx-auto flex flex-wrap justify-center lg:justify-between items-center px-5 gap-4">
           <p className="font-Lato font-semibold text-[16px] text-[#9DA0AE] text-center w-full lg:w-auto">
             © Fahad Bin Siddique - All Rights Reserved
           </p>
           <div className="flex justify-center gap-4">
             <Link to={"/pages"}>
-              <FaFacebook className="text-xl text-[#9DA0AE] hover:text-[#f92a87]" />
+              <FaFacebook className="text-xl text-[#9DA0AE] hover:text-[#f92a87] hover:scale-110 transition-transform duration-300" />
             </Link>
             <Link to={"/pages"}>
-              <LuInstagram className="text-xl text-[#9DA0AE] hover:text-[#f92a87]" />
+              <LuInstagram className="text-xl text-[#9DA0AE] hover:text-[#f92a87] hover:scale-110 transition-transform duration-300" />
             </Link>
             <Link to={"/pages"}>
-              <GrTwitter className="text-xl text-[#9DA0AE] hover:text-[#f92a87]" />
+              <GrTwitter className="text-xl text-[#9DA0AE] hover:text-[#f92a87] hover:scale-110 transition-transform duration-300" />
             </Link>
           </div>
         </div>

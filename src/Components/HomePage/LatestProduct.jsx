@@ -12,9 +12,19 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { BsZoomIn } from "react-icons/bs";
 
 const LatestProduct = () => {
+  const products = [
+    { image: image1166png, title: "Comfort Handy Craft", price: 42, oldPrice: 65 },
+    { image: image15png, title: "Comfort Handy Craft", price: 42, oldPrice: 65 },
+    { image: image1168png, title: "Comfort Handy Craft", price: 42, oldPrice: 65 },
+    { image: image23png, title: "Comfort Handy Craft", price: 42, oldPrice: 65 },
+    { image: image321png, title: "Comfort Handy Craft", price: 42, oldPrice: 65 },
+    { image: image31png, title: "Comfort Handy Craft", price: 42, oldPrice: 65 },
+  ];
+
   return (
     <section>
       <div className="container mx-auto pt-16">
+        {/* Section Heading */}
         <ReUsableOne
           heading="Leatest Products"
           catergoryName1="New Arrival"
@@ -22,208 +32,43 @@ const LatestProduct = () => {
           catergoryName3="Featured"
           catergoryName4="Special Offer"
         />
-        <div className="space-y-6">
 
-          <div className="flex justify-between py-16 ">
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 pt-8">
+          {products.map((product, index) => (
+            <div
+              key={index}
+              className="group shadow-md rounded-md overflow-hidden relative bg-white"
+            >
+              {/* Sale Badge */}
+              <div className="absolute w-[50%] top-[-60px] left-[-180px] duration-700 ease-in-out group-hover:left-[-35px]">
+                <img src={Sale1png} alt="Sale Badge" />
+              </div>
 
-            <div className="w-[450px] h-[306px] group shadow-sm overflow-hidden relative ">
-              <div className="absolute h-[] w-[50%] top-[-60px] left-[-170px] duration-700 ease-in-out group-hover:left-[-35px]">
-                <img src={Sale1png} alt="" />
+              {/* Product Image */}
+              <div className="w-full h-[270px] flex items-center justify-center bg-[#F7F7F7] group-hover:bg-white">
+                <img src={product.image} alt={product.title} />
               </div>
-              <div className="w-[450px] h-[270px]  flex items-center justify-center group-hover:bg-white  bg-[#F7F7F7]">
-                <img src={image1166png} alt="" />
-              </div>
-              
-              
-              <div className="flex h-[36px] justify-between   ">
-                <div className="flex items-end ">
-                  <h1 className="font-josef text-[18px]  text-[#151875]">
-                    Comfort Handy Craft
-                  </h1>
-                </div>
-                <div className="flex items-end  gap-2">
-                  <h1 className="font-josef text-[16px] text-[#151875]">
-                    $42.00
-                  </h1>
+
+              {/* Product Details */}
+              <div className="p-4 space-y-2">
+                <h1 className="font-josef text-[18px] text-[#151875]">{product.title}</h1>
+                <div className="flex justify-between items-center">
+                  <h1 className="font-josef text-[16px] text-[#151875]">${product.price.toFixed(2)}</h1>
                   <h1 className="font-josef text-[12px] line-through text-[#FB2448]">
-                    $65.00
+                    ${product.oldPrice.toFixed(2)}
                   </h1>
                 </div>
-                <div className="absolute space-y-4 top-[120px] left-[-20px] duration-700 ease-in-out group-hover:left-4">
+              </div>
+
+              {/* Hover Icons */}
+              <div className="absolute space-y-4 top-[120px] left-[-20px] duration-700 ease-in-out group-hover:left-4">
                 <FiShoppingCart className="text-[#2F1AC4] text-[20px]" />
-                    <IoIosHeartEmpty className="text-[#2F1AC4] text-[20px]" />
-                    <BsZoomIn className="text-[#2F1AC4] text-[20px]" />
-                </div>
-
-                
-                
-                
-              </div>
-              
-            </div>
-
-
-            <div className="w-[450px] h-[306px] group shadow-sm overflow-hidden relative ">
-            <div className="absolute h-[] w-[50%] top-[-60px] left-[-170px] duration-700 ease-in-out group-hover:left-[-35px]">
-                <img src={Sale1png} alt="" />
-              </div>
-              <div className="w-[450px] h-[270px]  flex items-center  justify-center   bg-[#F7F7F7] group-hover:bg-white">
-                <img src={image15png} alt="" />
-              </div>
-              <div className="flex h-[36px] justify-between   ">
-                <div className="flex items-end ">
-                  <h1 className="font-josef text-[18px]  text-[#151875]">
-                    Comfort Handy Craft
-                  </h1>
-                </div>
-                <div className="flex items-end  gap-2">
-                  <h1 className="font-josef text-[16px] text-[#151875]">
-                    $42.00
-                  </h1>
-                  <h1 className="font-josef text-[12px] line-through text-[#FB2448]">
-                    $65.00
-                  </h1>
-                </div>
-                <div className="absolute space-y-4 top-[120px] left-[-20px] duration-700 ease-in-out group-hover:left-4">
-                <FiShoppingCart className="text-[#2F1AC4] text-[20px]" />
-                    <IoIosHeartEmpty className="text-[#2F1AC4] text-[20px]" />
-                    <BsZoomIn className="text-[#2F1AC4] text-[20px]" />
-                </div>
+                <IoIosHeartEmpty className="text-[#2F1AC4] text-[20px]" />
+                <BsZoomIn className="text-[#2F1AC4] text-[20px]" />
               </div>
             </div>
-
-
-            <div className="w-[450px] h-[306px] group shadow-sm overflow-hidden relative ">
-            <div className="absolute h-[] w-[50%] top-[-60px] left-[-170px] duration-700 ease-in-out group-hover:left-[-35px]">
-                <img src={Sale1png} alt="" />
-              </div>
-              <div className="w-[450px] h-[270px] flex justify-center items-center   bg-[#F7F7F7] group-hover:bg-white">
-                <img src={image1168png} alt="" />
-              </div>
-              <div className="flex h-[36px] justify-between   ">
-                <div className="flex items-end ">
-                  <h1 className="font-josef text-[18px]  text-[#151875]">
-                    Comfort Handy Craft
-                  </h1>
-                </div>
-                <div className="flex items-end  gap-2">
-                  <h1 className="font-josef text-[16px] text-[#151875]">
-                    $42.00
-                  </h1>
-                  <h1 className="font-josef text-[12px] line-through text-[#FB2448]">
-                    $65.00
-                  </h1>
-                </div>
-                <div className="absolute space-y-4 top-[120px] left-[-20px] duration-700 ease-in-out group-hover:left-4">
-                <FiShoppingCart className="text-[#2F1AC4] text-[20px]" />
-                    <IoIosHeartEmpty className="text-[#2F1AC4] text-[20px]" />
-                    <BsZoomIn className="text-[#2F1AC4] text-[20px]" />
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div className="flex justify-between py-16 ">
-
-            <div className="w-[450px] h-[306px] group shadow-sm overflow-hidden relative ">
-              <div className="absolute h-[] w-[50%] top-[-60px] left-[-170px] duration-700 ease-in-out group-hover:left-[-35px]">
-                <img src={Sale1png} alt="" />
-              </div>
-              <div className="w-[450px] h-[270px]  flex items-center justify-center group-hover:bg-white  bg-[#F7F7F7]">
-                <img src={image23png} alt="" />
-              </div>
-              
-              
-              <div className="flex h-[36px] justify-between   ">
-                <div className="flex items-end ">
-                  <h1 className="font-josef text-[18px]  text-[#151875]">
-                    Comfort Handy Craft
-                  </h1>
-                </div>
-                <div className="flex items-end  gap-2">
-                  <h1 className="font-josef text-[16px] text-[#151875]">
-                    $42.00
-                  </h1>
-                  <h1 className="font-josef text-[12px] line-through text-[#FB2448]">
-                    $65.00
-                  </h1>
-                </div>
-                <div className="absolute space-y-4 top-[120px] left-[-20px] duration-700 ease-in-out group-hover:left-4">
-                <FiShoppingCart className="text-[#2F1AC4] text-[20px]" />
-                    <IoIosHeartEmpty className="text-[#2F1AC4] text-[20px]" />
-                    <BsZoomIn className="text-[#2F1AC4] text-[20px]" />
-                </div>
-
-                
-                
-                
-              </div>
-              
-            </div>
-
-
-            <div className="w-[450px] h-[306px] group shadow-sm overflow-hidden relative ">
-            <div className="absolute h-[] w-[50%] top-[-60px] left-[-170px] duration-700 ease-in-out group-hover:left-[-35px]">
-                <img src={Sale1png} alt="" />
-              </div>
-              <div className="w-[450px] h-[270px]  flex items-center  justify-center   bg-[#F7F7F7] group-hover:bg-white">
-                <img src={image321png} alt="" />
-              </div>
-              <div className="flex h-[36px] justify-between   ">
-                <div className="flex items-end ">
-                  <h1 className="font-josef text-[18px]  text-[#151875]">
-                    Comfort Handy Craft
-                  </h1>
-                </div>
-                <div className="flex items-end  gap-2">
-                  <h1 className="font-josef text-[16px] text-[#151875]">
-                    $42.00
-                  </h1>
-                  <h1 className="font-josef text-[12px] line-through text-[#FB2448]">
-                    $65.00
-                  </h1>
-                </div>
-                <div className="absolute space-y-4 top-[120px] left-[-20px] duration-700 ease-in-out group-hover:left-4">
-                <FiShoppingCart className="text-[#2F1AC4] text-[20px]" />
-                    <IoIosHeartEmpty className="text-[#2F1AC4] text-[20px]" />
-                    <BsZoomIn className="text-[#2F1AC4] text-[20px]" />
-                </div>
-              </div>
-            </div>
-
-
-            <div className="w-[450px] h-[306px] group shadow-sm overflow-hidden relative ">
-            <div className="absolute h-[] w-[50%] top-[-60px] left-[-170px] duration-700 ease-in-out group-hover:left-[-35px]">
-                <img src={Sale1png} alt="" />
-              </div>
-              <div className="w-[450px] h-[270px] flex justify-center items-center   bg-[#F7F7F7] group-hover:bg-white">
-                <img src={image31png} alt="" />
-              </div>
-              <div className="flex h-[36px] justify-between   ">
-                <div className="flex items-end ">
-                  <h1 className="font-josef text-[18px]  text-[#151875]">
-                    Comfort Handy Craft
-                  </h1>
-                </div>
-                <div className="flex items-end  gap-2">
-                  <h1 className="font-josef text-[16px] text-[#151875]">
-                    $42.00
-                  </h1>
-                  <h1 className="font-josef text-[12px] line-through text-[#FB2448]">
-                    $65.00
-                  </h1>
-                </div>
-                <div className="absolute space-y-4 top-[120px] left-[-20px] duration-700 ease-in-out group-hover:left-4">
-                <FiShoppingCart className="text-[#2F1AC4] text-[20px]" />
-                    <IoIosHeartEmpty className="text-[#2F1AC4] text-[20px]" />
-                    <BsZoomIn className="text-[#2F1AC4] text-[20px]" />
-                </div>
-              </div>
-            </div>
-
-          </div>
-
+          ))}
         </div>
       </div>
     </section>

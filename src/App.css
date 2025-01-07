@@ -1,60 +1,47 @@
- /* .slick-dots li button::before{
-    display: none!important;
-} */
-
-/* .slick-dots li{
-    margin-right: 10px !important;
-    margin-bottom: -40px !important;
-    margin-top: 0px !important;
-    height: 10px !important; 
-    width: 35px !important; 
-    border-radius: 5px;
-    background-color: #FEBAD7 !important;
-
-} */
-/* .slick-dots li.slick-active{
-    background-color: #FB2E86 !important;
-    
-} */
-.slick-arrow slick-next {
+/* Slick Next Arrow */
+button.slick-arrow.slick-next {
     width: 40px !important;
-    height: 20px !important;
-background-color: #f964b9 !important;     
-} 
-/* .slick-arrow slick-next {
-display:none !important ;
-
-}
-.slick-arrow slick-next  :hover{
-color: rebeccapurple !important ;
-
-} */
-
-/* .slick-next {
-    display: block !important;
-  }
-   */
-  /* .slick-arrow {
-    display: block !important; 
-    z-index: 10!important; 
-    background-color: #f964b9 !important; 
-    padding: 10px; 
-    border-radius: 5px  
+    height: 40px !important; /* পরিবর্তন করতে চাইলে height ঠিক করুন */
+    background-color: #f964b9 !important;
+    border-radius: 50%; /* বোতাম গোলাকৃতির হবে */
+    z-index: 1000; /* নিশ্চিত করুন বোতামটি স্লাইডের উপর দৃশ্যমান */
+    border: none;
   }
   
-   */
-/* .slick-slider center slick-initialized button{
-    background-color: #f964b9 !important; 
-    display: none !important; 
-    color: red !important; 
-    opacity: 100 !important; 
-} */
-button.slick-arrow.slick-prev{
-    background-color: #f964b9!important; 
-    
-}
-button.slick-arrow.slick-next{
-    background-color: #f964b9!important;
-}
-
-
+  /* Slick Prev Arrow */
+  button.slick-arrow.slick-prev {
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #f964b9 !important;
+    border-radius: 50%; /* বোতাম গোলাকৃতির হবে */
+    z-index: 1000; /* নিশ্চিত করুন বোতামটি স্লাইডের উপর দৃশ্যমান */
+    border: none;
+  }
+  
+  /* Optional: Change Arrow Icon Color */
+  button.slick-arrow:before {
+    color: white !important; /* অ্যারোর কালার পরিবর্তন */
+    font-size: 18px !important; /* অ্যারোর সাইজ */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    button.slick-arrow.slick-prev,
+    button.slick-arrow.slick-next {
+      width: 30px !important;
+      height: 30px !important;
+    }
+  
+    button.slick-arrow:before {
+      font-size: 14px !important;
+    }
+  }
+  
+  .slick-slide {
+    padding: 0 20px; /* ডান ও বামে 10px গ্যাপ */
+  }
+  
+  .slick-list {
+    margin: 0 -10px; /* পজিশন ঠিক করার জন্য */
+  }
+  

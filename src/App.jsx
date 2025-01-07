@@ -23,6 +23,9 @@ import BlogPage_2 from './Components/Blog/BlogPage_2';
 import About from './Components/AboutUs/About';
 import Contact from './Components/ContactUs/Contact';
 import NotFound from './Components/Others/NotFound';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 
 function App() {
