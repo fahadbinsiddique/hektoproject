@@ -1,105 +1,159 @@
 import React, { useState } from "react";
 import logo from "../../assets/img/Hekto.png";
 import { IoSearch } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
-import { FiAlignJustify } from "react-icons/fi";
-import { RxCross2 } from "react-icons/rx";
 import { SlMenu } from "react-icons/sl";
-
-
-
+import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
-
-
-  let [menuShow, setMenuShow] = useState(false)
+  const [menuShow, setMenuShow] = useState(false);
+  const location = useLocation(); // Get the current path
  
-  
   const handleMenu = () => {
-    setMenuShow(!menuShow)
+    setMenuShow(!menuShow);
+  };
 
-  }
-
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <>
-      <nav>
-        <div className="container  mx-auto">
-          <div className="flex lg:items-center items-center  gap-4 lg:justify-between py-6 ">
-            <div className=" lg:flex   justify-between items-end   gap-[160px] ">
+    <nav className="bg-white shadow-md">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex justify-between items-center">
+          {/* Logo Section */}
+          <div className="flex items-center">
+            <Link to={"/"}>
+              <img src={logo} alt="Logo" className="h-8 lg:h-10" />
+            </Link>
+          </div>
 
-              <div className="lg:flex  hover:scale-110   ">
-                
-                <Link to={"/"}>
-                  <img src={logo} alt="" />
+          {/* Navigation Menu */}
+          <div className="lg:flex hidden">
+            <ul className="flex gap-8 text-gray-700 font-medium">
+              <li className="group relative hover:scale-110">
+
+                <Link
+                  to={"/"}
+                  className={` flex items-center ${
+                    isActive("/") ? "text-[#FB2E86]" : "hover:text-[#FB2E86] "
+                  }`}
+                >
+                  Home
+                  <FaAngleDown className="ml-1 text-sm" />
                 </Link>
-              </div>
 
-              <div className="justify-between  ">
-                <ul className={`lg:flex  lg:gap-16 lg:static   ${menuShow == true ? ' absolute top-28 left-5 ease-in-out duration-700 bg-slate-300 ' : ' absolute -left-28 top-28 '} font-Lato   text-[16px] font-semibold  `}>
-                  
-                  <li className="group relative">
-                    <Link
-                      to={"/"}
-                      className="flex items-center hover:underline underline-offset-4 group-hover:text-[#f92a87] "
-                    >
-                      Home
-                      <FaAngleDown className="text-gray-600 group-hover:text-[#f92a87]" />
-                    </Link>
-                    <ul className="hidden   top-5 py-6  left-0 absolute group-hover:block ">
-                      <Link to={'/404-not-found'} className=" hover:underline  hover:text-[#f92a87] "><li>Page 1</li></Link>
-                      <Link to={'/404-not-found'} className=" hover:underline  hover:text-[#f92a87] py-2"><li>Page 2</li></Link>
-                      <Link to={'/404-not-found'} className=" hover:underline  hover:text-[#f92a87] py-2"><li>Page 3</li></Link>
-                      <Link to={'/404-not-found'} className=" hover:underline  hover:text-[#f92a87] py-2"><li>Page 4</li></Link>
-                      
-                      
-                    </ul>
-                  </li>
-                  <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
-                    <Link to={"/about"}>About Us</Link>
-                  </li>
-                  <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
-                    <Link to={"/products"}>Products</Link>
-                  </li>
-                  <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
-                    <Link to={"/blog"}>Blog</Link>
-                  </li>
-                  <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
-                    <Link to={"/shop"}>Shop</Link>
-                  </li>
-                  <li className="hover:text-[#f92a87] hover:underline underline-offset-4">
-                    <Link to={"/contact"}>Contact</Link>
-                  </li>
+                <ul className="hidden absolute w-[100px]  text-center -left-5 mt-1 bg-white shadow-md rounded group-hover:block">
+                  {["Page 1", "Page 2", "Page 3", "Page 4"].map((page, index) => (
+                    <li key={index} className="    py-2 hover:bg-gray-100">
+                      <Link to={"/404-not-found"}>{page}</Link>
+                    </li>
+                  ))}
                 </ul>
-              </div>
+              </li>
+              <li className="hover:scale-110">
+                <Link
+                  to={"/about"}
+                  className={`   ${
+                    isActive("/about") ? "text-[#FB2E86]" : "hover:text-[#FB2E86] hover:scale-110 "
+                  }`}
+                >
+                  About Us
+                </Link>
+              </li>
+              <li className="hover:scale-110 ">
+                <Link
+                  to={"/products"}
+                  className={`  ${
+                    isActive("/products") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                  }`}
+                >
+                  Products
+                </Link>
+              </li>
+              <li className="hover:scale-110 ">
+                <Link
+                  to={"/blog"}
+                  className={`${
+                    isActive("/blog") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                  }`}
+                >
+                  Blog
+                </Link>
+              </li>
+              <li className="hover:scale-110 ">
+                <Link
+                  to={"/shop"}
+                  className={`${
+                    isActive("/shop") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                  }`}
+                >
+                  Shop
+                </Link>
+              </li>
+              <li className="hover:scale-110 ">
+                <Link
+                  to={"/contact"}
+                  className={`${
+                    isActive("/contact") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                  }`}
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-            </div>
+          {/* Search Bar */}
+          <div className="hidden lg:flex items-center">
+            <input
+              placeholder="Search your product"
+              type="search"
+              className="border px-4 py-2 rounded-l-md text-sm focus:outline-none"
+            />
+            <button className="bg-[#FB2E86] px-4 py-2 rounded-r-md">
+              <IoSearch className="text-white text-lg" />
+            </button>
+          </div>
 
-            <div className="  flex items-center">
-              <input
-                placeholder="search your product"
-                type="search"
-                className="border-2 lg:px-8 -px-20   lg:py-2"
-              />
-
-              <div className="bg-[#FB2E86] lg:py-[9px] py-[1px]  lg:px-2 ">
-                <IoSearch className="text-white text-2xl" />
-              </div>
-
-
-            </div>
-
-              <div onClick={handleMenu} className="lg:hidden cursor-pointer ">
-                { menuShow == true ?   <RxCross2 /> : <SlMenu />
-
-                }
-              
-              </div>
+          {/* Mobile Menu Icon */}
+          <div
+            onClick={handleMenu}
+            className="lg:hidden text-2xl cursor-pointer"
+          >
+            {menuShow ? <RxCross2 /> : <SlMenu />}
           </div>
         </div>
-      </nav>
-    </>
+
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden transition-all duration-300 ${
+            menuShow ? "block" : "hidden"
+          }`}
+        >
+          <ul className="bg-gray-50 mt-4 p-4 rounded shadow-md">
+            {[
+              { name: "Home", path: "/" },
+              { name: "About Us", path: "/about" },
+              { name: "Products", path: "/products" },
+              { name: "Blog", path: "/blog" },
+              { name: "Shop", path: "/shop" },
+              { name: "Contact", path: "/contact" },
+            ].map((item, index) => (
+              <li key={index} className="mb-2">
+                <Link
+                  to={item.path}
+                  className={`block py-2 ${
+                    isActive(item.path) ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 

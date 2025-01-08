@@ -23,7 +23,6 @@ import img18 from "../../assets/img/Group dfasdf203.png";
 import img19 from "../../assets/img/Group 20dfdasf4.png";
 import { Link } from "react-router-dom";
 
-
 const BlogPage_1 = () => {
   const [activeCategory, setActiveCategory] = useState(1);
   const [activetag, setActivetag] = useState(1);
@@ -42,20 +41,18 @@ const BlogPage_1 = () => {
       ? "font-josef text-[14px] text-white bg-pink-500 rounded-md  py-2 w-[122px] "
       : "font-josef text-[14px] text-[#3F509E] bg-transparent px-6 py-2 hover:bg-gray-100 rounded-md";
 
+  const tag = [
+    { id: 1, label: "General" },
+    { id: 2, label: "Atsanil" },
+    { id: 3, label: "Insas." },
+    { id: 4, label: "Bibsaas" },
+    { id: 5, label: "Nulla." },
+  ];
 
-      const tag = [
-        { id: 1, label: "General" },
-        { id: 2, label: "Atsanil" },
-        { id: 3, label: "Insas." },
-        { id: 4, label: "Bibsaas" },
-        { id: 5, label: "Nulla." },
-      ];
-
-      // const gettagstyle = (id) =>
-      //   id === activetag
-      //     ? "font-lato text-[16px] text-pink-500 underline    "
-      //     : "font-lato text-[16px] text-[#3F509E] bg-transparent hover:bg-gray-100 underline";
-    
+  // const gettagstyle = (id) =>
+  //   id === activetag
+  //     ? "font-lato text-[16px] text-pink-500 underline    "
+  //     : "font-lato text-[16px] text-[#3F509E] bg-transparent hover:bg-gray-100 underline";
 
   return (
     <>
@@ -70,9 +67,11 @@ const BlogPage_1 = () => {
           <div className="flex justify-between pt-28 ">
             <div className=" w-[70%]">
               <div>
-                <Link to={'/maurisblogpost'}><div>
-                  <img src={img1} alt="" />
-                </div></Link>
+                <Link to={"/maurisblogpost"}>
+                  <div>
+                    <img src={img1} alt="" />
+                  </div>
+                </Link>
 
                 <div className="flex gap-5 py-6 ">
                   <div className="flex gap-2">
@@ -100,9 +99,11 @@ const BlogPage_1 = () => {
                   </div>
                 </div>
 
-                <Link to={'/maurisblogpost'}><p className="font-josef font-bold text-[30px] py-4 text-[#151875]">
-                  Mauris at orci non vulputate diam tincidunt nec.
-                </p></Link>
+                <Link to={"/maurisblogpost"}>
+                  <p className="font-josef font-bold text-[30px] py-4 text-[#151875]">
+                    Mauris at orci non vulputate diam tincidunt nec.
+                  </p>
+                </Link>
                 <p className="font-Lato text-[16px] w-[852px] text-[#8A8FB9]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
                   facilisis quis auctor pretium ipsum, eu rutrum. Condimentum eu
@@ -110,10 +111,12 @@ const BlogPage_1 = () => {
                   Adipiscing purus, cursus vulputate id id dictum at.
                 </p>
 
-                <Link to={'/maurisblogpost'}><p className=" font-Lato text-[#151875] font-semibold pb-4 text-[18px] items-center justify-center ">
-                  Read More{" "}
-                  <span className="text-[50px] text-[#f72588]">.</span>
-                </p></Link>
+                <Link to={"/maurisblogpost"}>
+                  <p className=" font-Lato text-[#151875] font-semibold pb-4 text-[18px] items-center justify-center ">
+                    Read More
+                    <span className="text-[50px] text-[#f72588]">.</span>
+                  </p>
+                </Link>
               </div>
               <div>
                 <div>
@@ -241,6 +244,7 @@ const BlogPage_1 = () => {
 
                 <div className="w-[254px]  flex flex-col justify-between h-[161px]">
                   <div className="flex flex-wrap  justify-between">
+                    
                     {categories.map((category) => (
                       <button
                         key={category.id}
@@ -490,49 +494,47 @@ const BlogPage_1 = () => {
 
                   <div className="flex"></div>
                 </div>
-
-
-
               </div>
 
-                <div>
-                  <p className="font-semibold font-josef text-[22px]  py-6 text-[#151875]">
-                    Follow
-                  </p>
-                  <div className="flex w-[126px] justify-between">
-                    <a href="https://facebook.com">
-                      <img src={img17} alt="Facebook" />
-                    </a>
-                    <a href="https://instagram.com">
-                      <img src={img18} alt="Facebook" />
-                    </a>
-                    <a href="https://x.com">
-                      <img src={img19} alt="Facebook" />
-                    </a>
-                  </div>
+              <div>
+                <p className="font-semibold font-josef text-[22px]  py-6 text-[#151875]">
+                  Follow
+                </p>
+                <div className="flex w-[126px] justify-between">
+                  <a href="https://facebook.com">
+                    <img src={img17} alt="Facebook" />
+                  </a>
+                  <a href="https://instagram.com">
+                    <img src={img18} alt="Facebook" />
+                  </a>
+                  <a href="https://x.com">
+                    <img src={img19} alt="Facebook" />
+                  </a>
                 </div>
+              </div>
 
-                <div>
+              <div>
                 <p className="font-semibold  font-josef text-[22px]  py-6 text-[#151875]">
-                    Tags
-                  </p>
+                  Tags
+                </p>
 
-                  <div className="w-[228px]  flex flex-wrap  gap-10">
-                    {tag.map((tag) => (
-                      <button
-                        key={tag.id}
-                        // className={gettagstyle(tag.id)}
-                        className={`${tag.id === activetag
+                <div className="w-[228px]  flex flex-wrap  gap-10">
+                  {tag.map((tag) => (
+                    <button
+                      key={tag.id}
+                      // className={gettagstyle(tag.id)}
+                      className={`${
+                        tag.id === activetag
                           ? "font-lato text-[16px] text-pink-500 underline    "
-                          : "font-lato text-[16px] text-[#3F509E] bg-transparent hover:bg-gray-100 underline" }`}
-                        onClick={() => setActivetag(tag.id)}
-                      >
-                        {tag.label}
-                      </button>
-                    ))}
-                  </div>
+                          : "font-lato text-[16px] text-[#3F509E] bg-transparent hover:bg-gray-100 underline"
+                      }`}
+                      onClick={() => setActivetag(tag.id)}
+                    >
+                      {tag.label}
+                    </button>
+                  ))}
                 </div>
-
+              </div>
             </div>
           </div>
         </div>

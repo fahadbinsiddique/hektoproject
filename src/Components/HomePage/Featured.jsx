@@ -12,7 +12,10 @@ const Featured = () => {
   const settings = {
     dots: false, // Pagination dots
     infinite: true,
+    autoplay: true,
+    autoplaySpeed: 1000,
     speed: 500,
+    cssEase: "linear",
     slidesToShow: 4, // Default for large screens
     slidesToScroll: 1,
     responsive: [
@@ -72,7 +75,7 @@ const Featured = () => {
                   </button>
 
                   {/* Icons */}
-                  <div className="flex gap-4 absolute left-4 top-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex gap-4 absolute left-4 top-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <FiShoppingCart className="text-[#2F1AC4] text-[20px] cursor-pointer" />
                     <IoIosHeartEmpty className="text-[#1389FF] text-[20px] cursor-pointer" />
                     <BsZoomIn className="text-[#1389FF] text-[20px] cursor-pointer" />
