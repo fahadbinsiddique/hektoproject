@@ -25,6 +25,7 @@ import Contact from './Components/ContactUs/Contact';
 import NotFound from './Components/Others/NotFound';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Faq from './Components/Others/Faq';
 
 
 
@@ -47,6 +48,7 @@ function App() {
       <Route path='/404-not-found' element={<NotFound/>}/>
       <Route path='/forgetpass' element={<ForgetPassword/>}/>
       <Route path='/maurisblogpost' element={<BlogPage_2/>}/>
+      <Route path='/faq' element={<Faq/>}/>
       
 
     </Route>

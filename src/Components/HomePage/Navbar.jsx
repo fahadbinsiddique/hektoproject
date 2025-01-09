@@ -18,8 +18,8 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
+      <div className="container mx-auto px-4 py-4 ">
+        <div className="flex justify-between items-center ">
           {/* Logo Section */}
           <div className="flex items-center">
             <Link to={"/"}>
@@ -62,12 +62,12 @@ const Navbar = () => {
               </li>
               <li className="hover:scale-110 ">
                 <Link
-                  to={"/products"}
+                  to={"/shop"}
                   className={`  ${
-                    isActive("/products") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                    isActive("/shop") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
                   }`}
                 >
-                  Products
+                  Shop
                 </Link>
               </li>
               <li className="hover:scale-110 ">
@@ -82,12 +82,12 @@ const Navbar = () => {
               </li>
               <li className="hover:scale-110 ">
                 <Link
-                  to={"/shop"}
+                  to={"/faq"}
                   className={`${
-                    isActive("/shop") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                    isActive("/faq") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
                   }`}
                 >
-                  Shop
+                  FAQ
                 </Link>
               </li>
               <li className="hover:scale-110 ">

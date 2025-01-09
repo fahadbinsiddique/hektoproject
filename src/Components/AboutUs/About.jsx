@@ -20,17 +20,19 @@ const About = () => {
       />
 
       <div className="container mx-auto">
+
         <div>
-          <div className="flex gap-16   py-10  ">
+
+          <div className="lg:flex gap-16   py-10  ">
             <div className="flex  items-center">
               <img src={img1} alt="" />
             </div>
 
             <div className="mt-12">
-              <p className="w-[522px] font-josef font-bold text-[36px] text-[#151875]">
+              <p className="lg:w-[522px] font-josef font-bold   text-[36px] text-[#151875]">
                 Know About Our Ecomerce Business, History
               </p>
-              <p className="w-[550px] mt-5 leading-7 font-Lato font-semibold text-[16px] text-[#8A8FB9]">
+              <p className="lg:w-[550px] mt-5 leading-7 font-Lato font-semibold text-[16px] text-[#8A8FB9]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis
                 neque ultrices mattis aliquam, malesuada diam est. Malesuada sem
                 tristique amet erat vitae eget dolor lobortis. Accumsan faucibus
@@ -41,6 +43,7 @@ const About = () => {
               </button>
             </div>
           </div>
+
         </div>
 
         <section className="pb-16">
@@ -48,8 +51,9 @@ const About = () => {
             Our Features
           </p>
 
-          <div className="flex justify-between py-16">
-            <div className="w-[270px] hover:border-b-orange-500 hover:border-4    h-[320px] shadow-2xl  justify-center  text-center bg-white">
+          <div className=" flex flex-wrap gap-12 justify-center">
+
+            <div className="w-[270px] hover:border-b-4 border-orange-400 hover:scale-110  h-[320px] shadow-2xl  justify-center  text-center bg-white">
               <div className="flex items-center  pt-12 justify-center">
                 <img src={img2} alt="" />
               </div>
@@ -63,7 +67,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="w-[270px] hover:border-b-orange-500 hover:border-4    h-[320px] shadow-2xl  justify-center  text-center bg-white">
+            <div className="w-[270px] hover:border-b-4 border-orange-400 hover:scale-110    h-[320px] shadow-2xl  justify-center  text-center bg-white">
               <div className="flex items-center  pt-12 justify-center">
                 <img src={img3} alt="" />
               </div>
@@ -77,7 +81,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="w-[270px] hover:border-b-orange-500 hover:border-4    h-[320px] shadow-2xl  justify-center  text-center bg-white">
+            <div className="w-[270px] hover:border-b-4 border-orange-400  hover:scale-110   h-[320px] shadow-2xl  justify-center  text-center bg-white">
               <div className="flex items-center  pt-12 justify-center">
                 <img src={img4} alt="" />
               </div>
@@ -91,7 +95,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="w-[270px] hover:border-b-orange-500 hover:border-4    h-[320px] shadow-2xl  justify-center  text-center bg-white">
+            <div className="w-[270px] hover:border-b-4 border-orange-400 hover:scale-110   h-[320px] shadow-2xl  justify-center  text-center bg-white">
               <div className="flex items-center  pt-12 justify-center">
                 <img src={img5} alt="" />
               </div>
@@ -104,6 +108,7 @@ const About = () => {
                 Massa purus gravida.
               </p>
             </div>
+
           </div>
         </section>
 
@@ -127,7 +132,7 @@ const About = () => {
                     <p className="font-semibold text-[10px] text-[#8A8FB9] text-center font-Lato">Ceo At Webecy Digital</p>
                 </div>
 
-                <p className="font-Lato py-10 text-center mx-auto  text-[16px] font-bold text-[#8A8FB9] w-[690px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non duis ultrices quam vel dui sollicitudin aliquet id arcu. Nam vitae a enim nunc, sed sapien egestas ac nam. Tristique ultrices dolor aliquam lacus volutpat praesent.</p>
+                <p className="font-Lato py-10 text-center mx-auto  text-[16px] font-bold text-[#8A8FB9] lg:w-[690px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non duis ultrices quam vel dui sollicitudin aliquet id arcu. Nam vitae a enim nunc, sed sapien egestas ac nam. Tristique ultrices dolor aliquam lacus volutpat praesent.</p>
             </div>
 
         </div>
