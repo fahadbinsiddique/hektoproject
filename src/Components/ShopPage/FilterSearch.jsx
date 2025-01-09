@@ -357,7 +357,7 @@ const FilterSearch = () => {
                       currentPage === 1 ? "hidden" : ""
                     } `}
                   >
-                    {" "}
+                    
                     <button> Prev </button>
                   </li>
 

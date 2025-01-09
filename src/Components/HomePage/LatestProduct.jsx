@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import ReUsableOne from "../Others/ReUsableOne";
 import image1166png from "../../assets/img/image 1166.png";
 import image1168png from "../../assets/img/image 1168.png";
 import image15png from "../../assets/img/image 15.png";
@@ -56,22 +55,32 @@ const LatestProduct = () => {
     },
   ];
 
-  let [tabProduct, setTabProduct] = useState([]);
-  console.log("fahafdd", tabProduct);
 
   const data = useContext(ApiDataContext);
 
-  const handlePricing = (showRange) => {
+  let [tabProduct, setTabProduct] = useState([]);
+
+
+  const handleProduct = (showRange) => {
     let filteredItem = data.filter(
       (item) => item.id > showRange.min && item.id <= showRange.max
     );
     setTabProduct(filteredItem);
   };
 
+  const [activeTab, setActiveTab] = useState(0); // সক্রিয় ট্যাব ট্র্যাক করতে `useState`
+  
+  
+
+  const handleTabChange = (index) => {
+    setActiveTab(index); // ট্যাব পরিবর্তনের জন্য `activeTab` আপডেট
+  };
+
   return (
     <section>
       <div className="container mx-auto pt-16">
-        <Tabs>
+        
+        <Tabs selectedIndex={activeTab} onSelect={handleTabChange}>
           <section>
             <div>
               <h1 className="font-josef font-bold text-center text-[42px]   pb-5 text-[#151875]">
@@ -80,32 +89,58 @@ const LatestProduct = () => {
               <div className="flex className='font-lato gap-8 justify-center text-center  text-[18px] '">
                 <TabList>
                   <Tab>
-                    <p className="text-[#FB2E86] underline-offset-1 flex items-baseline font-semibold gap-2">
-                      New Arrival <IoEllipse className="text-[8px]" />
+                    <p
+                      className={`  flex items-baseline font-semibold gap-2 ${
+                        activeTab == 0
+                          ? "underline underline-offset-3 text-[#FB2E86]"
+                          : "text-[#151875] font-semibold"
+                      }`}
+                    >
+                      New Arrival
+                      {activeTab === 0 && <IoEllipse className="text-[8px]" />}
                     </p>
                   </Tab>
                   <Tab>
                     <p
-                      onClick={() => handlePricing({ min: 0, max: 6 })}
-                      className="text-[#151875] font-semibold"
+                      onClick={() => {
+                        handleProduct({ min: 0, max: 6 });
+                        // setTabName(true);
+                      }}
+                      // className="text-[#151875] font-semibold"
+                      className={`flex items-baseline font-semibold gap-2 ${
+                        activeTab === 1
+                          ? "underline underline-offset-3 text-[#FB2E86]"
+                          : "text-[#151875] font-semibold"
+                      }`}
                     >
                       Best Seller
+                      {activeTab === 1 && <IoEllipse className="text-[8px]" />}
                     </p>
                   </Tab>
                   <Tab>
                     <p
-                      onClick={() => handlePricing({ min: 7, max: 13 })}
-                      className="text-[#151875] font-semibold"
+                      onClick={() => handleProduct({ min: 7, max: 13 })}
+                      className={`flex items-baseline font-semibold gap-2 ${
+                        activeTab === 2
+                          ? "underline underline-offset-3 text-[#FB2E86]"
+                          : "text-[#151875]"
+                      }`}
                     >
                       Featured
+                      {activeTab === 2 && <IoEllipse className="text-[8px]" />}
                     </p>
                   </Tab>
                   <Tab>
                     <p
-                      onClick={() => handlePricing({ min: 14, max: 20 })}
-                      className="text-[#151875] font-semibold"
+                      onClick={() => handleProduct({ min: 14, max: 20 })}
+                      className={`flex items-baseline font-semibold gap-2 ${
+                        activeTab === 3
+                          ? "underline underline-offset-3 text-[#FB2E86]"
+                          : "text-[#151875] font-semibold"
+                      }`}
                     >
                       Special Offer
+                      {activeTab === 3 && <IoEllipse className="text-[8px]" />}
                     </p>
                   </Tab>
                 </TabList>
