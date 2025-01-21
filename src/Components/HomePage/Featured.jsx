@@ -7,8 +7,18 @@ import { ApiDataContext } from "../Others/ContextApi";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { addToCart } from "../../slice/cartSlice";
+import { useDispatch } from "react-redux";
+
 
 const Featured = () => {
+
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart({ ...item, qty: 1 }));
+  };
   const settings = {
     dots: false, // Pagination dots
     infinite: true,
@@ -58,6 +68,7 @@ const Featured = () => {
         <div className="py-8">
           <Slider {...settings}>
             {value?.map((item) => (
+
               <div
                 key={item.id}
                 className="shadow-lg rounded-lg group hover:scale-105 transition-transform duration-300"
@@ -69,17 +80,29 @@ const Featured = () => {
                     src={item.thumbnail}
                     alt={item.title}
                   />
-                  <Link to={`/shop/details/${item.id}`}></Link>
-                  <button className="absolute -bottom-10 bg-[#08D15F] font-josef font-medium text-[12px] px-6 py-2 rounded-md transition-all ease-in-out duration-500 text-white group-hover:bottom-4">
-                    View Details
-                  </button>
+                  <Link to={`/shop/${item.id}`}>
+                    <button className="absolute -bottom-12 left-[110px] bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
+                      View Details
+                    </button>
+                  </Link>
 
                   {/* Icons */}
-                  <div className="flex gap-4 absolute left-4 top-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <FiShoppingCart className="text-[#2F1AC4] text-[20px] cursor-pointer" />
-                    <IoIosHeartEmpty className="text-[#1389FF] text-[20px] cursor-pointer" />
-                    <BsZoomIn className="text-[#1389FF] text-[20px] cursor-pointer" />
-                  </div>
+                  <div className=" gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <FiShoppingCart
+                                onClick={() => handleAddToCart(item)}
+                                className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
+                              />
+                            </div>
+
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <IoIosHeartEmpty className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
+                            </div>
+
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <BsZoomIn className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
+                            </div>
+                          </div>
                 </div>
 
                 {/* Product Info */}

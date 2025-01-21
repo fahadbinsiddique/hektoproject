@@ -55,11 +55,9 @@ const LatestProduct = () => {
     },
   ];
 
-
   const data = useContext(ApiDataContext);
 
   let [tabProduct, setTabProduct] = useState([]);
-
 
   const handleProduct = (showRange) => {
     let filteredItem = data.filter(
@@ -69,8 +67,6 @@ const LatestProduct = () => {
   };
 
   const [activeTab, setActiveTab] = useState(0); // সক্রিয় ট্যাব ট্র্যাক করতে `useState`
-  
-  
 
   const handleTabChange = (index) => {
     setActiveTab(index); // ট্যাব পরিবর্তনের জন্য `activeTab` আপডেট
@@ -79,7 +75,6 @@ const LatestProduct = () => {
   return (
     <section>
       <div className="container mx-auto pt-16">
-        
         <Tabs selectedIndex={activeTab} onSelect={handleTabChange}>
           <section>
             <div>

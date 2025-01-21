@@ -206,7 +206,7 @@ const BlogPage_1 = () => {
                 </p>
 
                 <p className=" font-Lato text-[#151875] font-semibold pb-4 text-[18px] items-center justify-center ">
-                  Read More{" "}
+                  Read More
                   <span className="text-[50px] text-[#f72588]">.</span>
                 </p>
               </div>
@@ -244,7 +244,6 @@ const BlogPage_1 = () => {
 
                 <div className="w-[254px]  flex flex-col justify-between h-[161px]">
                   <div className="flex flex-wrap  justify-between">
-                    
                     {categories.map((category) => (
                       <button
                         key={category.id}

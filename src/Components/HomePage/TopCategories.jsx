@@ -38,7 +38,7 @@ const TopCategories = () => {
               </div>
 
               {/* View Details Button */}
-              <button className="absolute -bottom-[50px] left-1/2 transform -translate-x-1/2 bg-[#08D15F] font-josef font-medium text-[12px] z-10 w-[124px] py-2 rounded-md text-white duration-300 ease-in-out group-hover:bottom-[100px]">
+              <button className="absolute -bottom-[50px] left-1/2 transform -translate-x-1/2 bg-[#08D15F] font-josef font-medium text-[12px] z-10 w-[124px] py-2 rounded-md text-white duration-700 ease-in-out group-hover:bottom-[100px]">
                 View Details
               </button>
 

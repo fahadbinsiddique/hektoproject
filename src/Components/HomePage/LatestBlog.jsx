@@ -16,7 +16,7 @@ const LatestBlog = () => {
         <div className="grid  gap-6 pt-24 pb-36 md:grid-cols-2 lg:grid-cols-3">
           {/* Blog Card */}
           {[latest1, latest2, latest3].map((image, index) => (
-            <div key={index} className="shadow-md rounded-md h-auto hover:scale-105 bg-white">
+            <div key={index} className="shadow-md rounded-md h-auto hover:scale-105 duration-700 ease-in-out bg-white">
               <div className="h-[255px] flex justify-center">
                 <img
                   src={image}

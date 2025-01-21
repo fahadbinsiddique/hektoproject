@@ -95,7 +95,7 @@ const FilterSearch = () => {
     <>
       <section>
         <div className="container mx-auto">
-          <div className="flex justify-between py-[100px]">
+          <div className="lg:flex lg:justify-between  py-[100px]">
             <div>
               <h2 className="font-josef font-bold  text-[22px] text-[#151875]">
                 Ecommerce Acceories & Fashion item{" "}
@@ -105,7 +105,7 @@ const FilterSearch = () => {
               </p>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex py-2 items-center gap-2">
               <p className="font-lato   text-[16px] text-[#3F509E]">
                 Per Page:
               </p>
@@ -121,7 +121,7 @@ const FilterSearch = () => {
               />
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 py-2">
               <p className="font-lato text-[16px] text-[#3F509E]">Sort By:</p>
 
               <select
@@ -145,7 +145,7 @@ const FilterSearch = () => {
               </select>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-[#3F509E] py-2">
               <p>View:</p>
 
               <input
@@ -157,8 +157,8 @@ const FilterSearch = () => {
             </div>
           </div>
 
-          <div className="flex gap-5  ">
-            <div className="w-[20%] space-y-3">
+          <div className="lg:flex gap-5  ">
+            <div className="lg:w-[20%] space-y-3 pb-6 ">
               <p
                 onClick={() => setCatShow(!catShow)}
                 className="font-josef underline underline-offset-[6px] cursor-pointer text-[20px] font-bold flex items-center text-[#151875]  justify-between"
@@ -172,7 +172,10 @@ const FilterSearch = () => {
                   {category.map((item) => (
                     <li
                       onClick={() => handleCategory(item)}
-                      className="py-4 hover:bg-gray-200 cursor-pointer border-b-[1px]"
+                      className={`py-4 hover:bg-gray-200 cursor-pointer border-b-[1px] ${item === cat ? 'bg-gray-400' : ''}` }
+                      // className={` border-[2px] px-5 py-2 ${
+                      //   currentPage === 1 ? "hidden" : "hover:bg-pink-100"
+                      // } `}
                     >
                       {item}
                     </li>
@@ -250,20 +253,33 @@ const FilterSearch = () => {
               )}
             </div>
 
-            <div className="w-[80%]">
-              <div className=" flex items-center flex-wrap gap-5 space-y-4">
+            <div className="lg:w-[80%]">
+              <div className=" lg:flex items-center flex-wrap gap-5 space-y-4">
                 {cat.length > 0
                   ? cat.map((item) => (
-                      <div className="w-[32%] shadow-md rounded-md group   ">
+                      <div className="lg:w-[32%]  shadow-md rounded-md group   ">
                         <div className="bg-[#F6F7FB] flex justify-center overflow-hidden relative  h-[350px] pt-[40px] pb-[20px]">
                           <img className="  " src={item.thumbnail} alt="" />
-                          <button className="absolute -bottom-10 bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
-                            View Details
-                          </button>
-                          <div className="flex gap-5 absolute  duration-700 ease-in-out -left-36 group-hover:left-2">
-                            <FiShoppingCart className="text-[#2F1AC4] text-[25px]  " />
-                            <IoIosHeartEmpty className="text-[#1389FF] text-[25px]" />
-                            <BsZoomIn className="text-[#1389FF] text-[25px]" />
+                          <Link to={`/shop/${item.id}`}>
+                            <button className="absolute -bottom-12 left-[140px] bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
+                              View Details
+                            </button>
+                          </Link>
+                          <div className=" gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <FiShoppingCart
+                                onClick={() => handleAddToCart(item)}
+                                className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
+                              />
+                            </div>
+
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <IoIosHeartEmpty className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
+                            </div>
+
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <BsZoomIn className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
+                            </div>
                           </div>
                         </div>
                         <div className="bg-[#ffffff] text-center py-8 space-y-3 group-hover:bg-[#2F1AC4] rounded-md">
@@ -281,16 +297,31 @@ const FilterSearch = () => {
                     ))
                   : priceList.length > 0
                   ? priceList.map((item) => (
-                      <div className="w-[32%] shadow-md rounded-md group   ">
+                      <div className="lg:w-[32%] shadow-md rounded-md group   ">
                         <div className="bg-[#F6F7FB] flex justify-center overflow-hidden relative  h-[350px] pt-[40px] pb-[20px]">
                           <img className="  " src={item.thumbnail} alt="" />
-                          <button className="absolute -bottom-10 bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
-                            View Details
-                          </button>
-                          <div className="flex gap-5 absolute duration-700 ease-in-out -left-36 group-hover:left-2">
-                            <FiShoppingCart className="text-[#2F1AC4] text-[25px]" />
-                            <IoIosHeartEmpty className="text-[#1389FF] text-[25px]" />
-                            <BsZoomIn className="text-[#1389FF] text-[25px]" />
+
+                          <Link to={`/shop/${item.id}`}>
+                            <button className="absolute -bottom-12 left-[140px] bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
+                              View Details
+                            </button>
+                          </Link>
+
+                          <div className=" gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <FiShoppingCart
+                                onClick={() => handleAddToCart(item)}
+                                className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
+                              />
+                            </div>
+
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <IoIosHeartEmpty className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
+                            </div>
+
+                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                              <BsZoomIn className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
+                            </div>
                           </div>
                         </div>
                         <div className="bg-[#ffffff] text-center py-8 space-y-3 group-hover:bg-[#2F1AC4] rounded-md">
@@ -307,17 +338,17 @@ const FilterSearch = () => {
                       </div>
                     ))
                   : perPageProduct.map((item) => (
-                      <div className="w-[32%] shadow-md rounded-md group  ">
+                      <div className="lg:w-[32%] shadow-md rounded-md group  ">
                         <div className="bg-[#F6F7FB] flex justify-center overflow-hidden relative  h-[350px] pt-[40px] pb-[20px]">
                           <img className="  " src={item.thumbnail} alt="" />
 
                           <Link to={`/shop/${item.id}`}>
-                            <button className="absolute -bottom-12 left-[140px] bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
+                            <button className="absolute -bottom-12 left-[130px] bg-[#08D15F] font-josef font-medium text-[12px] px-7 py-2 rounded-md duration-700 ease-in-out text-white group-hover:bottom-2 ">
                               View Details
-                            </button>{" "}
+                            </button>
                           </Link>
 
-                          <div className="flex gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
+                          <div className=" gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
                             <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
                               <FiShoppingCart
                                 onClick={() => handleAddToCart(item)}
@@ -350,14 +381,13 @@ const FilterSearch = () => {
               </div>
 
               <div>
-                <ul className=" flex gap-6 py-5">
+                <ul className=" flex flex-wrap gap-6 py-5">
                   <li
                     onClick={handlePrevPage}
                     className={` border-[2px] px-5 py-2 ${
-                      currentPage === 1 ? "hidden" : ""
+                      currentPage === 1 ? "hidden" : "hover:bg-pink-100"
                     } `}
                   >
-                    
                     <button> Prev </button>
                   </li>
 
@@ -367,21 +397,21 @@ const FilterSearch = () => {
                       className={` border-[2px] px-5 py-2 ${
                         pageNumbersList === currentPage
                           ? "bg-[#f72588] text-white"
-                          : ""
+                          : "hover:bg-pink-100"
                       } `}
                     >
-                      {" "}
                       <button> {pageNumbersList} </button>
                     </li>
                   ))}
                   <li
                     onClick={handleNextPage}
                     className={`border-[2px] px-5  py-2 ${
-                      currentPage === totalPageNumber ? "hidden" : ""
+                      currentPage === totalPageNumber
+                        ? "hidden"
+                        : "hover:bg-pink-100"
                     }  `}
                   >
-                    {" "}
-                    <button>Next</button>{" "}
+                    <button>Next</button>
                   </li>
                 </ul>
               </div>

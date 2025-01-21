@@ -134,9 +134,9 @@ const Navbar = () => {
             {[
               { name: "Home", path: "/" },
               { name: "About Us", path: "/about" },
-              { name: "Products", path: "/products" },
-              { name: "Blog", path: "/blog" },
               { name: "Shop", path: "/shop" },
+              { name: "Blog", path: "/blog" },
+              { name: "FAQ", path: "/faq" },
               { name: "Contact", path: "/contact" },
             ].map((item, index) => (
               <li key={index} className="mb-2">

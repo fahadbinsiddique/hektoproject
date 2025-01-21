@@ -23,7 +23,7 @@ const TreandingProducts = () => {
             (image, index) => (
               <div
                 key={index}
-                className="h-[350px] hover:scale-110  border-[10px] shadow-2xl border-white bg-white"
+                className="h-[350px] hover:scale-110 duration-500 ease-in-out border-[10px] shadow-2xl border-white bg-white"
               >
                 <div className="bg-[#F5F6F8] flex justify-center h-[244px]">
                   <img src={image} alt={`Product ${index}`} />
