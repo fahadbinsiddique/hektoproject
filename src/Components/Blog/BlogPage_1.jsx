@@ -8,6 +8,9 @@ import img3 from "../../assets/img/uil_calendar-alt.png";
 import img4 from "../../assets/img/bruce-mars-FWVMhUa_wbY-unsplash 3.png";
 import img5 from "../../assets/img/bruce-mars-FWVMhUa_wbY-unsplash 4.png";
 import img6 from "../../assets/img/Rectangle 126.png";
+import { LuInstagram } from "react-icons/lu";
+import { GrTwitter } from "react-icons/gr";
+import { FaFacebook } from "react-icons/fa6";
 import img7 from "../../assets/img/Rectangle fddsaf26.png";
 import img8 from "../../assets/img/Rectangleafdasfa 126.png";
 import img9 from "../../assets/img/Rectandasfadfgle 126.png";
@@ -18,9 +21,6 @@ import img13 from "../../assets/img/Mask Grsdafasdoup.png";
 import img14 from "../../assets/img/Maskdfadfa Group.png";
 import img15 from "../../assets/img/Mask dsfasdfGroup (1).png";
 import img16 from "../../assets/img/Maskdsfsa Group.png";
-import img17 from "../../assets/img/Grofdup 202.png";
-import img18 from "../../assets/img/Group dfasdf203.png";
-import img19 from "../../assets/img/Group 20dfdasf4.png";
 import { Link } from "react-router-dom";
 
 const BlogPage_1 = () => {
@@ -64,12 +64,12 @@ const BlogPage_1 = () => {
       />
       <div>
         <div className="container mx-auto">
-          <div className="flex justify-between pt-28 ">
-            <div className=" w-[70%]">
+          <div className="lg:flex justify-between pt-28 ">
+            <div className=" lg:w-[70%]">
               <div>
                 <Link to={"/maurisblogpost"}>
                   <div>
-                    <img src={img1} alt="" />
+                    <img src={img1} alt="" className="" />
                   </div>
                 </Link>
 
@@ -104,7 +104,7 @@ const BlogPage_1 = () => {
                     Mauris at orci non vulputate diam tincidunt nec.
                   </p>
                 </Link>
-                <p className="font-Lato text-[16px] w-[852px] text-[#8A8FB9]">
+                <p className="font-Lato text-[16px] lg:w-[852px] text-[#8A8FB9]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
                   facilisis quis auctor pretium ipsum, eu rutrum. Condimentum eu
                   malesuada vitae ultrices in in neque, porta dignissim.
@@ -118,6 +118,7 @@ const BlogPage_1 = () => {
                   </p>
                 </Link>
               </div>
+
               <div>
                 <div>
                   <img src={img4} alt="" />
@@ -152,7 +153,7 @@ const BlogPage_1 = () => {
                 <p className="font-josef font-bold text-[30px] py-4 text-[#151875]">
                   Aenean vitae in aliquam ultrices lectus. Etiam.
                 </p>
-                <p className="font-Lato text-[16px] w-[852px] text-[#8A8FB9]">
+                <p className="font-Lato text-[16px] lg:w-[852px] text-[#8A8FB9]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
                   facilisis quis auctor pretium ipsum, eu rutrum. Condimentum eu
                   malesuada vitae ultrices in in neque, porta dignissim.
@@ -160,7 +161,7 @@ const BlogPage_1 = () => {
                 </p>
 
                 <p className=" font-Lato text-[#151875] font-semibold pb-4 text-[18px] items-center justify-center ">
-                  Read More{" "}
+                  Read More
                   <span className="text-[50px] text-[#f72588]">.</span>
                 </p>
               </div>
@@ -198,30 +199,38 @@ const BlogPage_1 = () => {
                 <p className="font-josef font-bold text-[30px] py-4 text-[#151875]">
                   Sit nam congue feugiat nisl, mauris amet nisi.
                 </p>
-                <p className="font-Lato text-[16px] w-[852px] text-[#8A8FB9]">
+                <p className="font-Lato text-[16px] lg:w-[852px] text-[#8A8FB9]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
                   facilisis quis auctor pretium ipsum, eu rutrum. Condimentum eu
                   malesuada vitae ultrices in in neque, porta dignissim.
                   Adipiscing purus, cursus vulputate id id dictum at.
                 </p>
 
-                <p className=" font-Lato text-[#151875] font-semibold pb-4 text-[18px] items-center justify-center ">
+                <p className=" font-Lato text-[#151875] font-semibold pb-4   text-[18px] items-center justify-center ">
                   Read More
-                  <span className="text-[50px] text-[#f72588]">.</span>
+                  <span className="text-[50px] text-[#f72588] ">.</span>
                 </p>
               </div>
 
               <div className=" justify-center flex pt-6 pb-12 ">
-                <div className="flex justify-between  w-[236px] h-[24px]  ">
-                  <p className="font-Lato font-semibold text-[16px] ">1</p>
-                  <p className="font-Lato font-semibold text-[16px] ">2</p>
-                  <p className="font-Lato font-semibold text-[16px] ">3</p>
-                  <p className="font-Lato font-semibold text-[16px] ">4</p>
+                <div className="flex justify-between  gap-6 ">
+                  <p className="font-Lato font-semibold text-[16px] bg-[#f72588] border-[#f72588] text-white border-[2px] px-5 py-2  rounded-md ">
+                    1
+                  </p>
+                  <p className="font-Lato font-semibold  text-[#E0D3F5] border-[2px] px-5 py-2  rounded-md ">
+                    2
+                  </p>
+                  <p className="font-Lato font-semibold  text-[#E0D3F5] border-[2px] px-5 py-2  rounded-md ">
+                    3
+                  </p>
+                  <p className="font-Lato font-semibold  text-[#E0D3F5] border-[2px] px-5 py-2  rounded-md ">
+                    4
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className=" w-[30%]">
+            <div className=" lg:w-[30%]">
               <div className="pb-12">
                 <p className="font-semibold pb-4 font-josef text-[22px] text-[#151875]">
                   Search
@@ -416,7 +425,7 @@ const BlogPage_1 = () => {
               </div>
 
               <div>
-                <p className="font-semibold font-josef text-[22px]  pb-6 text-[#151875]">
+                <p className="font-semibold font-josef text-[22px] pt-6 pb-6 text-[#151875]">
                   Offer product
                 </p>
 
@@ -495,21 +504,25 @@ const BlogPage_1 = () => {
                 </div>
               </div>
 
+              
+
               <div>
                 <p className="font-semibold font-josef text-[22px]  py-6 text-[#151875]">
                   Follow
                 </p>
-                <div className="flex w-[126px] justify-between">
-                  <a href="https://facebook.com">
-                    <img src={img17} alt="Facebook" />
-                  </a>
-                  <a href="https://instagram.com">
-                    <img src={img18} alt="Facebook" />
-                  </a>
-                  <a href="https://x.com">
-                    <img src={img19} alt="Facebook" />
-                  </a>
+
+                <div className="flex  gap-4 ">
+                  <Link to={"/contact"}>
+                    <FaFacebook className="text-2xl text-[#9DA0AE] hover:text-[#f92a87] hover:scale-110 transition-transform duration-300" />
+                  </Link>
+                  <Link to={"/contact"}>
+                    <LuInstagram className="text-2xl text-[#9DA0AE] hover:text-[#f92a87] hover:scale-110 transition-transform duration-300" />
+                  </Link>
+                  <Link to={"/contact"}>
+                    <GrTwitter className="text-2xl text-[#9DA0AE] hover:text-[#f92a87] hover:scale-110 transition-transform duration-300" />
+                  </Link>
                 </div>
+
               </div>
 
               <div>

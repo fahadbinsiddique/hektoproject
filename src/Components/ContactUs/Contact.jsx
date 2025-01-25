@@ -1,8 +1,7 @@
-import React from 'react'
-import PageHeading from '../Others/PageHeading'
+import React from "react";
+import PageHeading from "../Others/PageHeading";
 import { FaCircle } from "react-icons/fa6";
-import img1 from '../../assets/img/Grdfadsfoup 267.png'
-
+import img1 from "../../assets/img/Grdfadsfoup 267.png";
 
 const Contact = () => {
   return (
@@ -16,18 +15,18 @@ const Contact = () => {
 
       <div className="container mx-auto">
         <section className="pt-24 pb-16">
-          <div className="flex gap-52  ">
+          <div className="lg:flex gap-52  ">
             <div>
               <p className="font-josef py-4 font-bold text-[36px] text-[#151875]">
                 Information About us
               </p>
-              <p className="font-lato w-[560px] pt-4 pb-12  font-semibold text-[16px] text-[#8A8FB9]">
+              <p className="font-lato lg:w-[560px] pt-4 pb-12  font-semibold text-[16px] text-[#8A8FB9]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis
                 neque ultrices mattis aliquam, malesuada diam est. Malesuada sem
                 tristique amet erat vitae eget dolor lobortis. Accumsan faucibus
                 vitae lobortis quis bibendum quam.
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-4 pb-12 ">
                 <FaCircle className="text-[#5625DF] text-[25px] " />
                 <FaCircle className="text-[#FF27B7]  text-[25px]" />
                 <FaCircle className="text-[#37DAF3]  text-[25px]" />
@@ -39,7 +38,7 @@ const Contact = () => {
                 Contact Way
               </p>
 
-              <div className="flex pb-16 py-4 justify-between w-[490px]">
+              <div className="lg:flex grid grid-cols-1 gap-10  lg:pb-16 py-4 justify-between w-[490px]">
                 <div className="flex items-center gap-5">
                   <FaCircle className="text-[50px] text-[#5726DF]" />
                   <p className="font-lato   font-semibold text-[16px] text-[#8A8FB9]">
@@ -57,7 +56,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex py-4 justify-between w-[490px]">
+              <div className="lg:flex grid grid-cols-1 gap-10 py-4 justify-between w-[490px]">
                 <div className="flex items-center gap-5">
                   <FaCircle className="text-[50px] text-[#FFB265]" />
                   <p className="font-lato   font-semibold text-[16px] text-[#8A8FB9]">
@@ -79,21 +78,20 @@ const Contact = () => {
         </section>
 
         <section>
-          <div className='pt-48 pb-64 '>
-            <div className="flex gap-52">
+          <div className="lg:pt-48 pb-64 ">
+            <div className="lg:flex gap-52">
+              
               <div>
                 <p className="font-josef py-4 font-bold text-[36px] text-[#151875]">
                   Get In Touch
                 </p>
-                <p className="font-lato w-[560px] pt-4 pb-12  font-semibold text-[16px] text-[#8A8FB9]">
+                <p className="font-lato lg:w-[560px] pt-4 pb-12  font-semibold text-[16px] text-[#8A8FB9]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Mattis neque ultrices tristique amet erat vitae eget dolor los
                   vitae lobortis quis bibendum quam.
                 </p>
 
-                
                 <div className="max-w-[600px] mx-auto py-8">
-                  
                   <form className="space-y-6">
                     {/* Row 1: Name and Email */}
                     <div className="flex space-x-4">
@@ -153,6 +151,6 @@ const Contact = () => {
       </div>
     </>
   );
-}
+};
 
-export default Contact
+export default Contact;

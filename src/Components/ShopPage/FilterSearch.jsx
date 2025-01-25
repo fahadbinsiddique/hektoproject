@@ -212,7 +212,7 @@ const FilterSearch = () => {
                 onClick={() => setCatPrice(!catPrice)}
                 className="font-josef underline underline-offset-[6px] cursor-pointer text-[20px] font-bold flex items-center  text-[#151875] justify-between"
               >
-                Price Filter
+                Price Range
                 {catPrice == true ? <TiArrowSortedDown /> : <TiArrowSortedUp />}
               </p>
 
@@ -415,6 +415,7 @@ const FilterSearch = () => {
                   </li>
                 </ul>
               </div>
+              
             </div>
           </div>
         </div>

@@ -102,6 +102,7 @@ const Footer = () => {
           <p className="font-Lato font-semibold text-[16px] text-[#9DA0AE] text-center w-full lg:w-auto">
             © Fahad Bin Siddique - All Rights Reserved
           </p>
+
           <div className="flex justify-center gap-4">
             <Link to={"/pages"}>
               <FaFacebook className="text-xl text-[#9DA0AE] hover:text-[#f92a87] hover:scale-110 transition-transform duration-300" />
@@ -113,6 +114,7 @@ const Footer = () => {
               <GrTwitter className="text-xl text-[#9DA0AE] hover:text-[#f92a87] hover:scale-110 transition-transform duration-300" />
             </Link>
           </div>
+          
         </div>
       </div>
     </footer>
