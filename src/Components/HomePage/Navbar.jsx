@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react"; // useContext Import
+import { ApiDataContext } from "../Others/ContextApi"; // Context Import
 import logo from "../../assets/img/Hekto.png";
 import { IoSearch } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
@@ -7,6 +8,12 @@ import { SlMenu } from "react-icons/sl";
 import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
+  const [searchTerm, setSearchTerm] = useState(""); // সার্চ ইনপুট সংরক্ষণ করার জন্য State
+  const products = useContext(ApiDataContext); // Context API থেকে প্রোডাক্ট লোড করা
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const [menuShow, setMenuShow] = useState(false);
   const location = useLocation(); // Get the current path
 
@@ -112,16 +119,47 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Search Bar */}
-          <div className="hidden lg:flex items-center">
-            <input
-              placeholder="Search your product"
-              type="search"
-              className="border px-4 py-2 rounded-l-md text-sm focus:outline-none"
-            />
-            <button className="bg-[#FB2E86] px-4 py-2 rounded-r-md">
-              <IoSearch className="text-white text-lg" />
-            </button>
+          <div className="relative">
+            {/* Search Bar */}
+            <div className="hidden lg:flex items-center">
+              <input
+                placeholder="Search your product"
+                type="search"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)} // সার্চ টার্ম আপডেট করা
+                className="border px-4 py-2 rounded-l-md text-sm focus:outline-none"
+              />
+
+              <button className="bg-[#FB2E86] px-4 py-2 rounded-r-md">
+                <IoSearch className="text-white text-lg" />
+              </button>
+            </div>
+
+            {searchTerm && filteredProducts.length > 0 && (
+              <ul className="absolute bg-white border rounded-md shadow-md mt-1 w-full max-h-60 overflow-y-auto">
+                {filteredProducts.map((product) => (
+                  <li
+                    key={product.id}
+                    className="flex items-center gap-2 p-2 hover:bg-gray-100"
+                  >
+                    {/* প্রোডাক্ট ইমেজ */}
+                    <img
+                      src={product.thumbnail}
+                      alt={product.title}
+                      className="w-12 h-12 object-cover rounded"
+                    />
+
+                    {/* প্রোডাক্ট নাম */}
+                    <Link
+                      to={`/shop/${product.id}`}
+                      className="text-gray-700 hover:text-blue-500"
+                    >
+                      {product.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           {/* Mobile Menu Icon */}
