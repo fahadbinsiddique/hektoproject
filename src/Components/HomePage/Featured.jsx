@@ -5,19 +5,29 @@ import { BsZoomIn } from "react-icons/bs";
 import Slider from "react-slick";
 import { ApiDataContext } from "../Others/ContextApi";
 import { Link } from "react-router-dom";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { addToCart } from "../../slice/cartSlice";
 import { useDispatch } from "react-redux";
-
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Featured = () => {
-
-
   const dispatch = useDispatch();
 
   const handleAddToCart = (item) => {
     dispatch(addToCart({ ...item, qty: 1 }));
+    toast.success(" Item Added To Cart ", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
   const settings = {
     dots: false, // Pagination dots
@@ -60,6 +70,7 @@ const Featured = () => {
 
   return (
     <section className="py-16">
+      <ToastContainer />
       <div className="container mx-auto px-4">
         <h2 className="font-josef font-bold text-[32px] md:text-[42px] text-[#1A0B5B] text-center">
           Featured Products
@@ -68,7 +79,6 @@ const Featured = () => {
         <div className="py-8">
           <Slider {...settings}>
             {value?.map((item) => (
-
               <div
                 key={item.id}
                 className="shadow-lg rounded-lg group hover:scale-105 transition-transform duration-300"
@@ -88,21 +98,21 @@ const Featured = () => {
 
                   {/* Icons */}
                   <div className=" gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
-                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
-                              <FiShoppingCart
-                                onClick={() => handleAddToCart(item)}
-                                className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
-                              />
-                            </div>
+                    <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                      <FiShoppingCart
+                        onClick={() => handleAddToCart(item)}
+                        className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
+                      />
+                    </div>
 
-                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
-                              <IoIosHeartEmpty className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
-                            </div>
+                    <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                      <IoIosHeartEmpty className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
+                    </div>
 
-                            <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
-                              <BsZoomIn className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
-                            </div>
-                          </div>
+                    <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
+                      <BsZoomIn className="text-[#1389FF] hover:text-[#f92a87] text-[25px]" />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Product Info */}

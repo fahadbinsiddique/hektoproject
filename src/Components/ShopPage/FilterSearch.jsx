@@ -9,6 +9,8 @@ import { TiArrowSortedUp } from "react-icons/ti";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../slice/cartSlice";
 import { useSelector } from "react-redux";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const FilterSearch = () => {
   const value = useContext(ApiDataContext);
@@ -89,10 +91,25 @@ const FilterSearch = () => {
 
   const handleAddToCart = (item) => {
     dispatch(addToCart({ ...item, qty: 1 }));
+    toast.success(" Item Added To Cart ", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
+
+  
 
   return (
     <>
+      <ToastContainer />
+
       <section>
         <div className="container mx-auto">
           <div className="lg:flex lg:justify-between  py-[100px]">
@@ -172,7 +189,9 @@ const FilterSearch = () => {
                   {category.map((item) => (
                     <li
                       onClick={() => handleCategory(item)}
-                      className={`py-4 hover:bg-gray-200 cursor-pointer border-b-[1px] ${item === cat ? 'bg-gray-400' : ''}` }
+                      className={`py-4 hover:bg-gray-200 cursor-pointer border-b-[1px] ${
+                        item === cat ? "bg-gray-400" : ""
+                      }`}
                       // className={` border-[2px] px-5 py-2 ${
                       //   currentPage === 1 ? "hidden" : "hover:bg-pink-100"
                       // } `}
@@ -265,10 +284,14 @@ const FilterSearch = () => {
                               View Details
                             </button>
                           </Link>
+
                           <div className=" gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
                             <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
                               <FiShoppingCart
-                                onClick={() => handleAddToCart(item)}
+                                onClick={() => {
+                                  handleAddToCart(item);
+                                  
+                                }}
                                 className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
                               />
                             </div>
@@ -310,7 +333,10 @@ const FilterSearch = () => {
                           <div className=" gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
                             <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
                               <FiShoppingCart
-                                onClick={() => handleAddToCart(item)}
+                                onClick={() => {
+                                  handleAddToCart(item);
+                                  
+                                }}
                                 className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
                               />
                             </div>
@@ -351,7 +377,10 @@ const FilterSearch = () => {
                           <div className=" gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
                             <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
                               <FiShoppingCart
-                                onClick={() => handleAddToCart(item)}
+                                onClick={() => {
+                                  handleAddToCart(item);
+                                  
+                                }}
                                 className="text-[#2F1AC4]  hover:text-[#f92a87] text-[25px]"
                               />
                             </div>
@@ -415,7 +444,6 @@ const FilterSearch = () => {
                   </li>
                 </ul>
               </div>
-              
             </div>
           </div>
         </div>

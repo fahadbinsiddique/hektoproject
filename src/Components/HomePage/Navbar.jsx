@@ -9,7 +9,7 @@ import { RxCross2 } from "react-icons/rx";
 const Navbar = () => {
   const [menuShow, setMenuShow] = useState(false);
   const location = useLocation(); // Get the current path
- 
+
   const handleMenu = () => {
     setMenuShow(!menuShow);
   };
@@ -17,7 +17,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 ">
         <div className="flex justify-between items-center ">
           {/* Logo Section */}
@@ -31,7 +31,6 @@ const Navbar = () => {
           <div className="lg:flex hidden">
             <ul className="flex gap-8 text-gray-700 font-medium">
               <li className="group relative hover:scale-110">
-
                 <Link
                   to={"/"}
                   className={` flex items-center ${
@@ -43,18 +42,22 @@ const Navbar = () => {
                 </Link>
 
                 <ul className="hidden absolute w-[100px]  text-center -left-5 mt-1 bg-white shadow-md rounded group-hover:block">
-                  {["Page 1", "Page 2", "Page 3", "Page 4"].map((page, index) => (
-                    <li key={index} className="    py-2 hover:bg-gray-100">
-                      <Link to={"/404-not-found"}>{page}</Link>
-                    </li>
-                  ))}
+                  {["Page 1", "Page 2", "Page 3", "Page 4"].map(
+                    (page, index) => (
+                      <li key={index} className="    py-2 hover:bg-gray-100">
+                        <Link to={"/404-not-found"}>{page}</Link>
+                      </li>
+                    )
+                  )}
                 </ul>
               </li>
               <li className="hover:scale-110">
                 <Link
                   to={"/about"}
                   className={`   ${
-                    isActive("/about") ? "text-[#FB2E86]" : "hover:text-[#FB2E86] hover:scale-110 "
+                    isActive("/about")
+                      ? "text-[#FB2E86]"
+                      : "hover:text-[#FB2E86] hover:scale-110 "
                   }`}
                 >
                   About Us
@@ -64,7 +67,9 @@ const Navbar = () => {
                 <Link
                   to={"/shop"}
                   className={`  ${
-                    isActive("/shop") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                    isActive("/shop")
+                      ? "text-[#FB2E86]"
+                      : "hover:text-[#FB2E86]"
                   }`}
                 >
                   Shop
@@ -74,7 +79,9 @@ const Navbar = () => {
                 <Link
                   to={"/blog"}
                   className={`${
-                    isActive("/blog") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                    isActive("/blog")
+                      ? "text-[#FB2E86]"
+                      : "hover:text-[#FB2E86]"
                   }`}
                 >
                   Blog
@@ -94,7 +101,9 @@ const Navbar = () => {
                 <Link
                   to={"/contact"}
                   className={`${
-                    isActive("/contact") ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                    isActive("/contact")
+                      ? "text-[#FB2E86]"
+                      : "hover:text-[#FB2E86]"
                   }`}
                 >
                   Contact
@@ -143,7 +152,9 @@ const Navbar = () => {
                 <Link
                   to={item.path}
                   className={`block py-2 ${
-                    isActive(item.path) ? "text-[#FB2E86]" : "hover:text-[#FB2E86]"
+                    isActive(item.path)
+                      ? "text-[#FB2E86]"
+                      : "hover:text-[#FB2E86]"
                   }`}
                 >
                   {item.name}
