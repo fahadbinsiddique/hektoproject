@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react"; // useContext Import
-import { ApiDataContext } from "../Others/ContextApi"; // Context Import
+import React, { useState, useContext } from "react"; 
+import { ApiDataContext } from "../Others/ContextApi"; 
 import logo from "../../assets/img/Hekto.png";
 import { IoSearch } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
@@ -24,7 +24,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-white shadow-md sticky top-0  z-50">
       <div className="container mx-auto px-4 py-4 ">
         <div className="flex justify-between items-center ">
           {/* Logo Section */}
