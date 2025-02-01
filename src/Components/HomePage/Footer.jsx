@@ -4,10 +4,13 @@ import { LuInstagram } from "react-icons/lu";
 import { GrTwitter } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import Hekto from "../../assets/img/Hekto.png";
+import ScrollToTop from "react-scroll-to-top";
+import  MySVG  from "../../assets/img/logo.svg";
 
 const Footer = () => {
   return (
     <footer>
+      <ScrollToTop smooth component={<img src={MySVG}/>} />
       <div className="h-auto w-full bg-[#EEEFFB] py-10">
         <div className="container mx-auto px-5 md:px-10">
           <div className="flex flex-wrap justify-between gap-8">
@@ -45,7 +48,10 @@ const Footer = () => {
                   "Video Games & Consoles",
                   "Waterproof Headphones",
                 ].map((item) => (
-                  <p key={item} className="font-Lato text-[16px] text-[#8A8FB9]">
+                  <p
+                    key={item}
+                    className="font-Lato text-[16px] text-[#8A8FB9]"
+                  >
                     {item}
                   </p>
                 ))}
@@ -65,7 +71,10 @@ const Footer = () => {
                   "Orders History",
                   "Order Tracking",
                 ].map((item) => (
-                  <p key={item} className="font-Lato text-[16px] text-[#8A8FB9]">
+                  <p
+                    key={item}
+                    className="font-Lato text-[16px] text-[#8A8FB9]"
+                  >
                     {item}
                   </p>
                 ))}
@@ -86,7 +95,10 @@ const Footer = () => {
                   "Visual Composer Elements",
                   "WooCommerce Pages",
                 ].map((item) => (
-                  <p key={item} className="font-Lato text-[16px] text-[#8A8FB9]">
+                  <p
+                    key={item}
+                    className="font-Lato text-[16px] text-[#8A8FB9]"
+                  >
                     {item}
                   </p>
                 ))}
@@ -114,7 +126,6 @@ const Footer = () => {
               <GrTwitter className="text-xl text-[#9DA0AE] hover:text-[#f92a87] hover:scale-110 transition-transform duration-300" />
             </Link>
           </div>
-          
         </div>
       </div>
     </footer>
