@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center ">
           {/* Logo Section */}
           <div className="flex items-center">
-            <Link to={"/"}>
+            <Link to={"/test"}>
               <img src={logo} alt="Logo" className="h-8 lg:h-10" />
             </Link>
           </div>
@@ -130,7 +130,7 @@ const Navbar = () => {
                 className="border px-4 py-2 rounded-l-md text-sm focus:outline-none"
               />
 
-              <button className="bg-[#FB2E86] px-4 py-2 rounded-r-md">
+              <button className="bg-[#FB2E86]  px-4 py-2 rounded-r-md">
                 <IoSearch className="text-white text-lg" />
               </button>
             </div>

@@ -15,6 +15,7 @@ import Shop from "./PAGES/Shop";
 import Layout from "./Components/Others/Layout";
 import ProductDetails from "./PAGES/ProductDetails";
 import Cart from "./Components/Others/Cart";
+import Test from "./Components/Others/Test";
 import CheckoutPage from "./Components/Others/CheckoutPage";
 import OrderComplete from "./Components/Others/OrderComplete";
 import SignIn from "./Components/Others/SignIn";
@@ -34,6 +35,7 @@ function App() {
     createRoutesFromElements(
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/test" element={<Test/>} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/blog" element={<Blog />} />
