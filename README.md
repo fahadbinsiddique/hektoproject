@@ -10,10 +10,11 @@ Hekto is a **fully-featured general eCommerce marketplace** designed to sell a v
 - ✅ **Payment Gateway Integration**
 - ✅ **Admin Panel for Product & Order Management**
 - ✅ **Responsive & Mobile-Friendly UI**
-- ✅ **SEO Optimized with Next.js**
+- ✅ **SEO Optimized with React.js**
 - ✅ **Fast Performance with Lazy Loading**
 - ✅ **Unique Features:**
-  - (More features can be added in future updates)
+- Scroll toTop Button 
+- (More features can be added in future updates)
 
 ## 🛠️ Tech Stack
 - **Frontend:** HTML, CSS, React.js, Tailwind CSS, JavaScript
