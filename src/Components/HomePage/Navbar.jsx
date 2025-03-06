@@ -29,8 +29,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center ">
           {/* Logo Section */}
           <div className="flex items-center">
-            <Link to={"/test"}>
-              <img src={logo} alt="Logo" className="h-8 lg:h-10" />
+            <Link to={"/"}>
+              <img src={logo} alt="Logo" className="h-8 lg:h-10 hover:scale-105" />
             </Link>
           </div>
 
