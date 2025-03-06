@@ -91,6 +91,7 @@ const FilterSearch = () => {
 
   const handleAddToCart = (item) => {
     dispatch(addToCart({ ...item, qty: 1 }));
+    
     toast.success(" Item Added To Cart ", {
       position: "top-right",
       autoClose: 2000,

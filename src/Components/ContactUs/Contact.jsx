@@ -1,9 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import PageHeading from "../Others/PageHeading";
 import { FaCircle } from "react-icons/fa6";
 import img1 from "../../assets/img/Grdfadsfoup 267.png";
+import { db, collection, addDoc } from "../../firebase.config";
+import app from "../../firebase.config";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await addDoc(collection(db, "contacts"), formData);
+      // alert("Message Sent Successfully!");
+      notify();
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      toast.error("Error submitting your message. Please try again.");
+    }
+  };
+
+  const notify = () => {
+    toast.success("Message Sent Successfully!", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
+
   return (
     <>
       <PageHeading
@@ -80,7 +122,6 @@ const Contact = () => {
         <section>
           <div className="lg:pt-48 pb-64 ">
             <div className="lg:flex gap-52">
-              
               <div>
                 <p className="font-josef py-4 font-bold text-[36px] text-[#151875]">
                   Get In Touch
@@ -91,13 +132,17 @@ const Contact = () => {
                   vitae lobortis quis bibendum quam.
                 </p>
 
-                <div className="max-w-[600px] mx-auto py-8">
-                  <form className="space-y-6">
+                <div className="max-w-[600px] mx-auto py-8 ">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Row 1: Name and Email */}
                     <div className="flex space-x-4">
                       <div className="w-1/2">
                         <input
                           type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
                           placeholder="Your Name*"
                           className="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
@@ -105,7 +150,11 @@ const Contact = () => {
                       <div className="w-1/2">
                         <input
                           type="email"
-                          placeholder="Your E-mail*"
+                          name="email"
+                          placeholder="Your Email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
                           className="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                       </div>
@@ -115,7 +164,11 @@ const Contact = () => {
                     <div>
                       <input
                         type="text"
-                        placeholder="Subject*"
+                        name="subject"
+                        placeholder="Subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
                         className="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
@@ -123,7 +176,11 @@ const Contact = () => {
                     {/* Row 3: Message */}
                     <div>
                       <textarea
-                        placeholder="Type Your Message*"
+                        name="message"
+                        placeholder="Your Message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
                         rows="4"
                         className="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                       ></textarea>
@@ -132,11 +189,13 @@ const Contact = () => {
                     {/* Submit Button */}
                     <div className="">
                       <button
+                        // onClick={notify}
                         type="submit"
                         className="bg-pink-500 text-white py-3 px-6 rounded hover:bg-pink-600 transition"
                       >
-                        Send Mail
+                        Send Message
                       </button>
+                      <ToastContainer />
                     </div>
                   </form>
                 </div>
