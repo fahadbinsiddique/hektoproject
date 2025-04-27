@@ -8,7 +8,6 @@ const Banner2 = () => {
       <div className="bg-[#F1F0FF]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
-            {/* Left Side: Image */}
             <div className="flex justify-center">
               <img
                 src={group153}
@@ -17,14 +16,12 @@ const Banner2 = () => {
               />
             </div>
 
-            {/* Right Side: Text Content */}
             <div className="text-center lg:text-left">
               <h2 className="text-[#151875] font-josef font-bold text-[24px] md:text-[30px] lg:text-[35px] pb-5 leading-snug">
                 Unique Features Of Latest & Trending Products
               </h2>
 
               <div className="space-y-4 md:space-y-5">
-                {/* Feature Points */}
                 <p className="flex items-center gap-3 font-Lato font-medium text-[14px] md:text-[16px] text-[#ACABC3]">
                   <IoEllipse className="text-[#F52B70]" />
                   All frames constructed with hardwood solids and laminates
@@ -40,7 +37,6 @@ const Banner2 = () => {
                 </p>
               </div>
 
-              {/* Call-to-Action Section */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 py-8">
                 <button className="font-josef font-semibold text-[15px] md:text-[17px] rounded-md py-4 px-8 bg-[#f92a87] text-white mb-4 sm:mb-0">
                   Add To Cart

@@ -25,9 +25,9 @@ const ProductDetails = () => {
 
 <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Left Section: Images */}
+       
           <div className="flex-shrink-0 lg:w-1/3 flex lg:flex-col gap-4">
-            {/* Thumbnail Images */}
+          
             <div className="flex lg:flex-col gap-4">
               {singleProduct[0]?.images?.map((image, index) => (
                 <div key={index} className="w-1/4 lg:w-full">
@@ -41,7 +41,7 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          {/* Right Section: Product Details */}
+         
           <div className="flex-grow lg:w-2/3">
             {singleProduct.map((item) => (
               <div key={item.id}>
@@ -49,7 +49,7 @@ const ProductDetails = () => {
                   {item.title}
                 </h3>
                 <div className="flex items-center gap-2 mt-2">
-                  {/* Price */}
+         
                   <span className="text-lg font-semibold text-gray-900">
                     ${item.price.toFixed(2)}
                   </span>
@@ -61,7 +61,7 @@ const ProductDetails = () => {
                   </span>
                 </div>
 
-                {/* Rating */}
+              
                 
                 <div className="flex items-center mt-4">
                   <span className="text-yellow-500 text-lg">★</span>
@@ -70,15 +70,13 @@ const ProductDetails = () => {
                   </span>
                 </div>
 
-                {/* Description */}
                 <p className="mt-6 text-gray-600">{item.description}</p>
 
-                {/* Add to Cart */}
+              
                 <button className="mt-6 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
                   Add To Cart
                 </button>
 
-                {/* Additional Info */}
                 <div className="mt-6 text-sm text-gray-600">
                   <p>
                     <strong>Categories:</strong> {item.category}

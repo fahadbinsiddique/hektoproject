@@ -20,9 +20,7 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const handleSignup = (e) => {
-    // if (!/(?=.*[!#$%&? "])/.test(password)){
-    //   setError('Must contain a special character')
-    // }
+   
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {

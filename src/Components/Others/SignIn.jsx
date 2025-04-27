@@ -12,7 +12,6 @@ const SignIn = () => {
   const provider = new GoogleAuthProvider();
 
 
-   // Handle Sign-In
    const handleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
@@ -21,7 +20,6 @@ const SignIn = () => {
       alert(`Welcome, ${user.displayName}!`);
     } catch (error) {
       console.error("Sign-In Error:", error);
-      // alert("Sign-In Failed! Please try again.");
     }
   };
 

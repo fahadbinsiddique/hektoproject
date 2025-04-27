@@ -12,13 +12,13 @@ import image32png from "../../assets/img/image32.png";
 const TreandingProducts = () => {
   return (
     <section>
-      {/* Trending Products */}
+      
       <div className="container mx-auto pb-16 px-4">
         <h2 className="font-josef font-bold text-[#151875] pb-8 md:pb-12 text-[28px] md:text-[36px] lg:text-[42px] text-center">
           Trending Products
         </h2>
         <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Product Card */}
+     
           {[boximage, image1170png, image31png, image321png].map(
             (image, index) => (
               <div
@@ -47,10 +47,9 @@ const TreandingProducts = () => {
         </div>
       </div>
 
-      {/* Offer Section */}
       <div className="container mx-auto pb-32 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Card */}
+       
           <div className="bg-[#fff6fb] relative p-6 h-[270px]">
             <h1 className="text-[20px] md:text-[26px] font-semibold font-josef text-[#151875] pb-4">
               23% off in all products
@@ -68,7 +67,7 @@ const TreandingProducts = () => {
             />
           </div>
 
-          {/* Middle Card */}
+   
           <div className="bg-[#EEEFFB] relative p-6 h-[270px]">
             <h1 className="text-[20px] md:text-[26px] font-semibold font-josef text-[#151875] pb-4">
               23% off in all products
@@ -86,7 +85,7 @@ const TreandingProducts = () => {
             />
           </div>
 
-          {/* Right Card */}
+      
           <div className="flex flex-col justify-between h-[270px]">
             {[image30png, image32png, image33png].map((image, index) => (
               <div

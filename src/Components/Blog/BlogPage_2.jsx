@@ -62,10 +62,7 @@ const BlogPage_2 = () => {
     { id: 5, label: "Nulla." },
   ];
 
-  // const gettagstyle = (id) =>
-  //   id === activetag
-  //     ? "font-lato text-[16px] text-pink-500 underline    "
-  //     : "font-lato text-[16px] text-[#3F509E] bg-transparent hover:bg-gray-100 underline";
+ 
 
   return (
     <>
@@ -721,7 +718,7 @@ const BlogPage_2 = () => {
                   {tag.map((tag) => (
                     <button
                       key={tag.id}
-                      // className={gettagstyle(tag.id)}
+                      
                       className={`${
                         tag.id === activetag
                           ? "font-lato text-[16px] text-pink-500 underline    "

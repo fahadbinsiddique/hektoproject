@@ -30,35 +30,35 @@ const Featured = () => {
     });
   };
   const settings = {
-    dots: false, // Pagination dots
+    dots: false, 
     infinite: true,
     autoplay: true,
     autoplaySpeed: 1000,
     speed: 500,
     cssEase: "linear",
-    slidesToShow: 4, // Default for large screens
+    slidesToShow: 4, 
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1200, // Large screens
+        breakpoint: 1200, 
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 992, // Medium screens (tablets)
+        breakpoint: 992, 
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 768, // Small screens (mobile landscape)
+        breakpoint: 768, 
         settings: {
           slidesToShow: 1,
         },
       },
       {
-        breakpoint: 576, // Extra small screens (mobile portrait)
+        breakpoint: 576, 
         settings: {
           slidesToShow: 1,
         },
@@ -83,7 +83,6 @@ const Featured = () => {
                 key={item.id}
                 className="shadow-lg rounded-lg group hover:scale-105 transition-transform duration-300"
               >
-                {/* Product Image */}
                 <div className="bg-[#F6F7FB] flex justify-center items-center overflow-hidden relative h-[250px] md:h-[300px] lg:h-[350px] rounded-t-lg">
                   <img
                     className="object-contain max-h-full w-full"
@@ -96,7 +95,6 @@ const Featured = () => {
                     </button>
                   </Link>
 
-                  {/* Icons */}
                   <div className=" gap-5   cursor-pointer absolute duration-700 ease-in-out -left-48 group-hover:left-2">
                     <div className="hover:bg-white w-12 items-center justify-center flex  h-12 rounded-full">
                       <FiShoppingCart
@@ -115,7 +113,6 @@ const Featured = () => {
                   </div>
                 </div>
 
-                {/* Product Info */}
                 <div className="bg-white text-center py-4 space-y-2 group-hover:bg-[#2F1AC4] rounded-b-lg">
                   <h3 className="font-Lato font-bold text-[16px] lg:text-[18px] group-hover:text-white text-[#FB2E86]">
                     {item.title}

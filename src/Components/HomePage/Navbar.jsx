@@ -8,14 +8,14 @@ import { SlMenu } from "react-icons/sl";
 import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
-  const [searchTerm, setSearchTerm] = useState(""); // সার্চ ইনপুট সংরক্ষণ করার জন্য State
-  const products = useContext(ApiDataContext); // Context API থেকে প্রোডাক্ট লোড করা
+  const [searchTerm, setSearchTerm] = useState(""); 
+  const products = useContext(ApiDataContext); 
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const [menuShow, setMenuShow] = useState(false);
-  const location = useLocation(); // Get the current path
+  const location = useLocation(); 
 
   const handleMenu = () => {
     setMenuShow(!menuShow);
@@ -27,14 +27,14 @@ const Navbar = () => {
     <nav className="bg-white shadow-md sticky top-0  z-50">
       <div className="container mx-auto px-4 py-4 ">
         <div className="flex justify-between items-center ">
-          {/* Logo Section */}
+       
           <div className="flex items-center">
             <Link to={"/"}>
               <img src={logo} alt="Logo" className="h-8 lg:h-10 hover:scale-105" />
             </Link>
           </div>
 
-          {/* Navigation Menu */}
+      
           <div className="lg:flex hidden">
             <ul className="flex gap-8 text-gray-700 font-medium">
               <li className="group relative hover:scale-110">
@@ -120,13 +120,13 @@ const Navbar = () => {
           </div>
 
           <div className="relative">
-            {/* Search Bar */}
+          
             <div className="hidden lg:flex items-center">
               <input
                 placeholder="Search your product"
                 type="search"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)} // সার্চ টার্ম আপডেট করা
+                onChange={(e) => setSearchTerm(e.target.value)}
                 className="border px-4 py-2 rounded-l-md text-sm focus:outline-none"
               />
 
@@ -142,14 +142,14 @@ const Navbar = () => {
                     key={product.id}
                     className="flex items-center gap-2 p-2 hover:bg-gray-100"
                   >
-                    {/* প্রোডাক্ট ইমেজ */}
+                   
                     <img
                       src={product.thumbnail}
                       alt={product.title}
                       className="w-12 h-12 object-cover rounded"
                     />
 
-                    {/* প্রোডাক্ট নাম */}
+                
                     <Link
                       to={`/shop/${product.id}`}
                       className="text-gray-700 hover:text-blue-500"
@@ -162,7 +162,7 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Mobile Menu Icon */}
+        
           <div
             onClick={handleMenu}
             className="lg:hidden text-2xl cursor-pointer"
@@ -171,7 +171,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+       
         <div
           className={`lg:hidden transition-all duration-300 ${
             menuShow ? "block" : "hidden"

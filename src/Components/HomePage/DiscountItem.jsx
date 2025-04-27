@@ -10,23 +10,16 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 const DiscountItem = () => {
   
 
-  const [activeTab, setActiveTab] = useState(0); // সক্রিয় ট্যাব ট্র্যাক করতে `useState`
+  const [activeTab, setActiveTab] = useState(0); 
 
   const handleTabChange = (index) => {
-    setActiveTab(index); // ট্যাব পরিবর্তনের জন্য `activeTab` আপডেট
+    setActiveTab(index); 
   };
   return (
     <section>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <Tabs selectedIndex={activeTab} onSelect={handleTabChange}>
-          {/* ReUsable Component */}
-          {/* <ReUsableOne 
-          heading="Discount Item"
-          catergoryName1="Wood Chair"
-          catergoryName2="Plastic Chair"
-          catergoryName3="Sofa Collection"
-          
-        /> */}
+         
 
           <section>
             <div>
@@ -78,11 +71,9 @@ const DiscountItem = () => {
               </div>
             </div>
           </section>
-          {/* Main Section */}
 
           <TabPanel>
             <div className="flex flex-col pt-12 lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-16 h-auto lg:h-[597px]">
-              {/* Left Content */}
               <div className="text-center lg:flex lg:gap-5 lg:items-center  lg:text-left">
                 <div>
                   <h1 className="font-josef font-bold pb-3 text-[28px] md:text-[30px] lg:text-[35px] text-[#151875]">
@@ -96,7 +87,6 @@ const DiscountItem = () => {
                     eget feugiat habitasse nec, bibendum condimentum.
                   </p>
 
-                  {/* Features Section */}
                   <div className="flex flex-col md:flex-row md:justify-between gap-6 lg:gap-10 pb-10 lg:pb-14">
                     <div className="space-y-4">
                       <p className="font-lato tracking-wide text-[14px] md:text-[16px] text-[#B8B8DC] flex items-center gap-2">
@@ -121,13 +111,11 @@ const DiscountItem = () => {
                     </div>
                   </div>
 
-                  {/* Shop Button */}
                   <button className="font-josef justify-center items-center text-center font-semibold text-[15px] md:text-[17px] rounded-md py-4 px-10 md:px-14 bg-[#f92a87] text-white">
                     Shop Now
                   </button>
                 </div>
 
-                {/* Right Image */}
                 <div className="flex justify-center pb-6 ">
                   <img
                     src={tortuga}
@@ -141,7 +129,6 @@ const DiscountItem = () => {
 
           <TabPanel>
             <div className="flex flex-col pt-12 lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-16 h-auto lg:h-[597px]">
-              {/* Left Content */}
               <div className="text-center lg:flex lg:gap-5 lg:items-center  lg:text-left">
                 <div>
                   <h1 className="font-josef font-bold pb-3 text-[28px] md:text-[30px] lg:text-[35px] text-[#151875]">
@@ -155,7 +142,6 @@ const DiscountItem = () => {
                     eget feugiat habitasse nec, bibendum condimentum.
                   </p>
 
-                  {/* Features Section */}
                   <div className="flex flex-col md:flex-row md:justify-between gap-6 lg:gap-10 pb-10 lg:pb-14">
                     <div className="space-y-4">
                       <p className="font-lato tracking-wide text-[14px] md:text-[16px] text-[#B8B8DC] flex items-center gap-2">
@@ -180,13 +166,11 @@ const DiscountItem = () => {
                     </div>
                   </div>
 
-                  {/* Shop Button */}
                   <button className="font-josef justify-center items-center text-center font-semibold text-[15px] md:text-[17px] rounded-md py-4 px-10 md:px-14 bg-[#f92a87] text-white">
                     Shop Now
                   </button>
                 </div>
 
-                {/* Right Image */}
                 <div className="flex justify-center pb-6 ">
                   <img
                     src={plasticChair}
@@ -200,7 +184,6 @@ const DiscountItem = () => {
 
           <TabPanel>
             <div className="flex flex-col pt-12 lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-16 h-auto lg:h-[597px]">
-              {/* Left Content */}
               <div className="text-center lg:flex lg:gap-5 lg:items-center  lg:text-left">
                 <div>
                   <h1 className="font-josef font-bold pb-3 text-[28px] md:text-[30px] lg:text-[35px] text-[#151875]">
@@ -214,7 +197,6 @@ const DiscountItem = () => {
                     eget feugiat habitasse nec, bibendum condimentum.
                   </p>
 
-                  {/* Features Section */}
                   <div className="flex flex-col md:flex-row md:justify-between gap-6 lg:gap-10 pb-10 lg:pb-14">
                     <div className="space-y-4">
                       <p className="font-lato tracking-wide text-[14px] md:text-[16px] text-[#B8B8DC] flex items-center gap-2">
@@ -239,13 +221,11 @@ const DiscountItem = () => {
                     </div>
                   </div>
 
-                  {/* Shop Button */}
                   <button className="font-josef justify-center items-center text-center font-semibold text-[15px] md:text-[17px] rounded-md py-4 px-10 md:px-14 bg-[#f92a87] text-white">
                     Shop Now
                   </button>
                 </div>
 
-                {/* Right Image */}
                 <div className="flex justify-center pb-6 ">
                   <img
                     src={sofa}

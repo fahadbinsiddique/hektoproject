@@ -73,7 +73,7 @@ const Faq = () => {
 
                 <div className="max-w-[600px] mx-auto py-16">
                   <form className="space-y-6">
-                    {/* Row 1: Name and Email */}
+             
                     <div className="flex space-x-4">
                       <div className="w-1/2">
                         <input
@@ -91,7 +91,7 @@ const Faq = () => {
                       </div>
                     </div>
 
-                    {/* Row 2: Subject */}
+                 
                     <div>
                       <input
                         type="text"
@@ -100,7 +100,7 @@ const Faq = () => {
                       />
                     </div>
 
-                    {/* Row 3: Message */}
+                   
                     <div>
                       <textarea
                         placeholder="Type Your Message*"
@@ -109,7 +109,7 @@ const Faq = () => {
                       ></textarea>
                     </div>
 
-                    {/* Submit Button */}
+                 
                     <div className="">
                       <button
                         type="submit"

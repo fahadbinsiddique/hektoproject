@@ -17,7 +17,6 @@ const FilterSearch = () => {
 
   const cartData = useSelector((state) => state.cartItemManager.cartItems);
 
-  //category
 
   let [category, setCategory] = useState([]);
 
@@ -33,7 +32,6 @@ const FilterSearch = () => {
   };
   let [catShow, setCatShow] = useState(false);
 
-  //brand
   let [brand, setBrand] = useState([]);
 
   useEffect(() => {
@@ -45,7 +43,6 @@ const FilterSearch = () => {
     setCat(filteredBrand);
   };
   let [brandShow, setBrandShow] = useState(false);
-  //===========
 
   const [catPrice, setCatPrice] = useState(false);
 
@@ -193,9 +190,7 @@ const FilterSearch = () => {
                       className={`py-4 hover:bg-gray-200 cursor-pointer border-b-[1px] ${
                         item === cat ? "bg-gray-400" : ""
                       }`}
-                      // className={` border-[2px] px-5 py-2 ${
-                      //   currentPage === 1 ? "hidden" : "hover:bg-pink-100"
-                      // } `}
+                     
                     >
                       {item}
                     </li>

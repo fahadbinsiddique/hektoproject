@@ -44,7 +44,6 @@ export const cartSlice = createSlice({
         if (state.cartItems[findProductIndex].qty > 1) {
           state.cartItems[findProductIndex].qty -= 1;
         } else {
-          // state.cartItems.splice(findProductIndex, 1); 
         }
         localStorage.setItem("cart", JSON.stringify(state.cartItems));
       }

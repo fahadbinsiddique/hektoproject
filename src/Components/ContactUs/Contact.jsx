@@ -23,7 +23,7 @@ const Contact = () => {
 
     try {
       await addDoc(collection(db, "contacts"), formData);
-      // alert("Message Sent Successfully!");
+      
       notify();
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
@@ -134,7 +134,6 @@ const Contact = () => {
 
                 <div className="max-w-[600px] mx-auto py-8 ">
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Row 1: Name and Email */}
                     <div className="flex space-x-4">
                       <div className="w-1/2">
                         <input
@@ -160,7 +159,6 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    {/* Row 2: Subject */}
                     <div>
                       <input
                         type="text"
@@ -173,7 +171,6 @@ const Contact = () => {
                       />
                     </div>
 
-                    {/* Row 3: Message */}
                     <div>
                       <textarea
                         name="message"
@@ -186,10 +183,9 @@ const Contact = () => {
                       ></textarea>
                     </div>
 
-                    {/* Submit Button */}
                     <div className="">
                       <button
-                        // onClick={notify}
+                       
                         type="submit"
                         className="bg-pink-500 text-white py-3 px-6 rounded hover:bg-pink-600 transition"
                       >

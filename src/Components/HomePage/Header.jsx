@@ -20,7 +20,6 @@ const Header = () => {
       <div className="container mx-auto py-3 px-4">
 
         <div className="flex flex-wrap justify-between items-center">
-          {/* Left Section */}
           <div className="flex flex-wrap gap-5 items-center">
 
             <div className="flex items-center text-[#F1F1F1] gap-2">
@@ -38,7 +37,6 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Right Section */}
           <div className="mt-4 md:mt-0">
             <ul className="flex flex-wrap gap-4 sm:gap-6 font-josef text-[14px] sm:text-[16px] font-semibold items-center">
               <li>

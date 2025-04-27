@@ -23,17 +23,17 @@ const TopCategories = () => {
           Top Categories
         </h1>
 
-        {/* Category Items */}
+ 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
             <div
               key={category.id}
               className="w-full relative overflow-hidden group"
             >
-              {/* Background Circle */}
+            
               <div className="flex justify-center w-[220px] h-[220px] bg-[#986be4] rounded-full absolute top-[35px] left-[50%] -translate-x-1/2 duration-700 ease-in-out group-hover:w-[278px] group-hover:h-[278px] group-hover:top-[15px]"></div>
 
-              {/* Product Image */}
+             
               <div className="flex justify-center h-[290px] py-2 relative">
                 <img
                   src={category.image}
@@ -42,14 +42,14 @@ const TopCategories = () => {
                 />
               </div>
 
-              {/* View Details Button */}
+         
               <Link to={`/shop`}>
                 <button className="absolute -bottom-[50px] left-1/2 transform -translate-x-1/2 bg-[#08D15F] font-josef font-medium text-[12px] z-10 w-[124px] py-2 rounded-md text-white duration-700 ease-in-out group-hover:bottom-[100px]">
                   View Details
                 </button>
               </Link>
 
-              {/* Product Details */}
+            
               <div className="text-center mt-6">
                 <h2 className="font-josef font-semibold text-[20px] text-[#151875]">
                   {category.title}
